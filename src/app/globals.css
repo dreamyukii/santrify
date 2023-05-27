@@ -1,107 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+	--bs-blue: #0d6efd;
+	--bs-indigo: #6610f2;
+	--bs-purple: #6f42c1;
+	--bs-pink: #d63384;
+	--bs-red: #dc3545;
+	--bs-orange: #fd7e14;
+	--bs-yellow: #ffc107;
+	--bs-green: #198754;
+	--bs-teal: #20c997;
+	--bs-cyan: #0dcaf0;
+	--bs-white: #fff;
+	--bs-gray: #e0e0e058;
+	--bs-gray-dark: #343a40;
+	--bs-primary: #0d6efd;
+	--bs-secondary: #6c757d;
+	--bs-success: #198754;
+	--bs-info: #0dcaf0;
+	--bs-warning: #ffc107;
+	--bs-danger: #dc3545;
+	--bs-light: #f8f9fa;
+	--bs-dark: #212529;
+	--bs-back: #ebe9e9;
+	--bs-border:#bcbcbc;
+	--bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	--bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+	--bs-gradient: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.15),
+		rgba(255, 255, 255, 0)
+	);
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.sidebar {
+	width: 110px;
+	height: 100vh;
+	padding: 0 1.7rem;
+	color: #fff;
+
+	transition: all 0.4s linear;
+	background-color: var(--bs-teal);
+}
+.sidebar:hover {
+	width: 240px;
+	transition: 0.39s;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.logo {
+	height: 80px;
+	padding: 16px;
+}
+.menu {
+	height: 88%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.menu li {
+	padding: 1rem;
+	margin: 8px 0;
+	border-radius: 8px;
+	transition: all 0.3s ease-in-out;
+	list-style-type: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.menu li:hover,
+.active {
+	background: var(--bs-gray);
 }
+
+.menu a {
+	color: #fff;
+	
+}
+
+.menu a i {
+	font-size: 1.2rem;
+}
+
+/* main */
+.main-content {
+	background-color: var(--bs-back);
+	padding: 1rem;
+}
+.header {
+	background-color: var(--bs-light);
+	border-radius: 10px;
+	padding: 10px 2rem;
+	margin-bottom: 1rem;
+}
+
+.title {
+	color: var(--bs-teal);
+}
+
+.header img {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.search-box {
+	gap: 5px;
+	padding: 1px 8px;
+	border-radius: 15px;
+	color: var(--bs-teal);
+	background-color: var(--bs-white);
+}
+
+.search-box input {
+	background: transparent;
+	padding: 10px;
+}
+.search-box i {
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: all 0.4s ease-out;
+}
+
+.search-box i:hover {
+	transform: scale(1.1);
+}
+
+/* -------insight------- */
+.insight-container {
+	background: var(--bs-light);
+  width: 77%;
+	padding: 2rem;
+	border-radius: 10px;
+}
+
+.insight-title {
+	color: var(--bs-teal);
+	padding-bottom: 10px;
+	font-size: 15px;
+}
+
+.insight {
+	background: var(--bs-white);
+	border-radius: 10px;
+	padding: 1.2rem;
+	width: 290px;
+	height: 130px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.insight:hover {
+	transform: translateY(-5px);
+}
+
+.insight-header {
+	margin-bottom: 20px;
+}
+
+.title {
+	
+	font-weight: 200;
+}
+
+.value {
+	
+	margin-top: 20px;
+}
+
+.icon {
+	color: var(--bs-teal);
+	padding: 1rem;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+/* login page */
+.login{
+	height: 100vh;
+}
+
+.header h1 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 48px;
+	
+}
+
+.header p{
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	
+}
+
+.login-form label {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.login-form input, .login-form .facebook{
+	border: 1px solid var(--bs-border);
+	box-sizing: border-box;
+	border-radius: 8px;
+	background: var(--bs-white);
+
+}
+
+.login-form a, .login-form span{
+	
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	color: var(--bs-teal);
+}
+
+.fb{
+	width: 20px;
+	height: 20px;
+}
+
+.login-form .signin{
+	height: 42px;
+	border-radius: 8px;
+	color: var(--bs-white);
+	background-color: var(--bs-teal);
+}
+

@@ -1,0 +1,15 @@
+.form-control{
+	width: 400px;
+}
+.btn-success{
+	border:none;
+    background-color: var(--bs-teal);
+    color: var(--bs-dark);
+    
+}
+.btn-success:hover{
+    background-color: var(--bs-teal);
+    color: var(--bs-success);
+}
+
+
