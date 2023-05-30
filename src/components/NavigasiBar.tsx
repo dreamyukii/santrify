@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 export default function NavigasiBar() {
     return (
       <div
@@ -11,10 +12,9 @@ export default function NavigasiBar() {
 				<li className="">
 					<a
 						href="../index.html"
-						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
-					>
-						<i className="fas fa-tachometer-alt-fast"></i>
-						<span className="overflow-hidden">Dashboard</span>
+						className="text-decoration-none fs-6 d-flex align-items-center gap-3">
+						 
+						<span className="overflow-hidden"><FontAwesomeIcon icon="coffee" />Dashboard</span>
 					</a>
 				</li>
 				<li>
