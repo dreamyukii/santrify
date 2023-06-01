@@ -9,7 +9,7 @@ export default class login extends Component {
       <div className="row">
         <div className="col-6 ">
           {/* Login Page */}
-            <div className="login-page ">
+            <div className="login-page">
               <div className="row h-100 justify-content-center align-items-center">
                 <div className="col-sm-8 col-md-9">
                   <div className="header">
