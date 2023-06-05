@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faGaugeHigh, faUser, faBed, faMoneyBill, faClockRotateLeft, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 export default function SideBarKiri() {
     return (
       <div
@@ -13,8 +13,12 @@ export default function SideBarKiri() {
 					<a
 						href="../index.html"
 						className="text-decoration-none fs-6 d-flex align-items-center gap-3">
+
+						<div>
+							<FontAwesomeIcon icon={faGaugeHigh} className="sidebar-icon"/>
+						</div>
 						 
-						<span className="overflow-hidden"><FontAwesomeIcon icon="coffee" />Dashboard</span>
+						<span className="overflow-hidden">Dashboard</span>
 					</a>
 				</li>
 				<li>
@@ -22,7 +26,9 @@ export default function SideBarKiri() {
 						href="santri.html"
 						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
 					>
-						<i className="fas fa-user"></i>
+						<div>
+							<FontAwesomeIcon icon={faUser} className="sidebar-icon"/>
+						</div>
 						<span className="overflow-hidden">Santri</span>
 					</a>
 				</li>
@@ -31,7 +37,9 @@ export default function SideBarKiri() {
 						href="kamar.html"
 						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
 					>
-						<i className="fas fa-bed"></i>
+						<div>
+							<FontAwesomeIcon icon={faBed} className="sidebar-icon"/>
+						</div>
 						<span className="overflow-hidden">Room</span>
 					</a>
 				</li>
@@ -40,7 +48,9 @@ export default function SideBarKiri() {
 						href="tagihan.html"
 						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
 					>
-						<i className="fas fa-money-bill"></i>
+						<div>
+							<FontAwesomeIcon icon={faMoneyBill} className="sidebar-icon"/>
+						</div>
 						<span className="overflow-hidden">Bill</span>
 					</a>
 				</li>
@@ -49,7 +59,9 @@ export default function SideBarKiri() {
 						href="#"
 						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
 					>
-						<i className="fas fa-clock-rotate-left"></i>
+						<div>
+							<FontAwesomeIcon icon={faClockRotateLeft} className="sidebar-icon"/>
+						</div>
 						<span className="overflow-hidden">History</span>
 					</a>
 				</li>
@@ -58,8 +70,10 @@ export default function SideBarKiri() {
 						href="login.html"
 						className="text-decoration-none d-flex align-items-center gap-3"
 					>
-						<i className="fas fa-arrow-right-from-bracket"></i>
-						<span className="overflow-hidden">Log Out</span>
+						<div>
+							<FontAwesomeIcon icon={faArrowRightFromBracket} className="sidebar-icon"/>
+						</div>
+						<span className="overflow-hidden">LogOut</span>
 					</a>
 				</li>
 			</ul>
