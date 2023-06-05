@@ -45,18 +45,19 @@
 	font-family: "Poppins", sans-serif;
 }
 
+/* Sidebar CSS */
 .sidebar {
 	width: 110px;
 	height: 100vh;
 	padding: 0 1.7rem;
-	color: #fff;
+	color: #ffff;
 
 	transition: all 0.4s linear;
 	background-color: var(--bs-teal);
 }
 .sidebar:hover {
 	width: 240px;
-	transition: 0.39s;
+	transition: 0.4s;
 }
 
 .logo {
@@ -77,16 +78,22 @@
 
 .menu li:hover,
 .active {
-	background: var(--bs-gray);
+	/* Mungkin bisa diganti opacity, tp idk tak kasih exact value aja */
+	background: #62d1b0;
 }
 
 .menu a {
-	color: #fff;
+	color: #ffff;
 	
 }
 
-.menu a i {
-	font-size: 1.2rem;
+.menu a:hover{
+	text-decoration: none;
+	color: inherit;
+}
+
+.sidebar-icon{
+	width: 20px;
 }
 
 /* main */
