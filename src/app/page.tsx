@@ -1,11 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import './globals.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import SideBarKiri from '@/components/SideBarKiri'
+import "bootstrap/dist/css/bootstrap.css";
+import "./globals.css";
+import NavigasiBar from "@/components/NavigasiBar";
+import SideBarKiri from "@/components/SideBarKiri";
+
 export default function Home() {
   return (
-
-   <SideBarKiri/>
-    
-  )
+    <>
+      <header>
+        <NavigasiBar/>
+      </header>
+      <div>
+        <SideBarKiri/>
+      </div>
+    </>
+  );
 }
