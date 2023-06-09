@@ -1,5 +1,6 @@
 .form-control{
-	width: 400px;
+	width: 200px;
+    height: auto;
 }
 .btn-success{
 	border:none;
@@ -13,6 +14,6 @@
 }
 
 .login-page{
-    margin: 200px;
-    padding: auto;
+    margin-top: 300px;
+    padding-left: 30vh;
 }
