@@ -1,17 +1,11 @@
-import SideBarKiri from "../components/SideBarKiri";
-export const metadata = {
-  title: "Santrify",
-  description: "management dashboard for Islamic Boarding School ",
-};
+import "bootstrap/dist/css/bootstrap.css";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
-      <div>
-        <h1>Main Page</h1>
-      </div>
-
-      <SideBarKiri />
+    <div>
+    <h1 >Main Page</h1>
+    </div>
     </>
   );
 }

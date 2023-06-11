@@ -64,7 +64,7 @@ export default class login extends Component {
         <div className="col-2">
           <Image
             src="/santri_login.jpg"
-            width={1200}
+            width={1000}
             height={945}
             alt="santri"
           />

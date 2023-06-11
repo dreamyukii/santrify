@@ -249,3 +249,7 @@
 	background-color: var(--bs-teal);
 }
 
+.sidebarLayout{
+	display: flex;
+}
+
