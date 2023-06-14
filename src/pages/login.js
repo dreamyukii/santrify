@@ -8,8 +8,8 @@ export default class login extends Component {
     return (
       <div className="row">
         <div className="col-6 ">
-          <div class="card login-page">
-            <div class="card-body px-1">
+          <div className="card login-page">
+            <div className="card-body px-1">
               {/* Login Page */}
               <div className="">
                 <div className="row h-100 justify-content-center align-items-center">

@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import SideBarKiri from "../components/SideBarKiri";
-import "./globals.css";
 import NavigasiBar from "../components/NavigasiBar";
+import "./globals.css";
 
 export const metadata = {
   title: "Santrify",
@@ -11,14 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-
-      </head>
+      <head></head>
       <body>
         <div className="sidebarLayout">
           <SideBarKiri />
-          <NavigasiBar/>
-          {children}
+          <div style={{ width: "100%" }}>
+            <NavigasiBar />
+            <div style={{padding:10}}> {children}</div>
+          </div>
         </div>
       </body>
     </html>
