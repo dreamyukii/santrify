@@ -8,6 +8,7 @@ import {
   faClockRotateLeft,
   faArrowRightFromBracket,
   faHistory,
+  faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 export default function SideBarKiri() {
   return (
@@ -32,7 +33,7 @@ export default function SideBarKiri() {
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
-              <FontAwesomeIcon icon={faUser} className="sidebar-icon" />
+              <FontAwesomeIcon icon={faPerson} className="sidebar-icon" />
             </div>
             <span className="overflow-hidden">Santri</span>
           </Link>
@@ -61,18 +62,29 @@ export default function SideBarKiri() {
         </li>
         <li>
         <Link
+            href="/profile"
+            className="text-decoration-none fs-6 d-flex align-items-center gap-3"
+          >
+            <div>
+              <FontAwesomeIcon icon={faUser} className="sidebar-icon" />
+            </div>
+            <span className="overflow-hidden">Profile</span>
+          </Link>
+        </li>
+        <li>
+        <Link
             href="/history"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
               <FontAwesomeIcon icon={faHistory} className="sidebar-icon" />
             </div>
-            <span className="overflow-hidden">history</span>
+            <span className="overflow-hidden">History</span>
           </Link>
         </li>
         <li className="logout position-absolute bottom-0 w-100">
           <a
-            href="login.html"
+            href="/login"
             className="text-decoration-none d-flex align-items-center gap-3"
           >
             <div>
