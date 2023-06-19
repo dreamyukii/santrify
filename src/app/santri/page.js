@@ -1,11 +1,7 @@
-
 export default function santri() {
-
   return (
     <>
-
-    <div>SANTRI PAGE</div>
+      <div>SANTRI PAGE</div>
     </>
-
-  )
+  );
 }

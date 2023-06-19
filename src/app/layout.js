@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
+import "./globals.css";
 import SideBarKiri from "../components/SideBarKiri";
 import NavigasiBar from "../components/NavigasiBar";
-import "./globals.css";
 
 export const metadata = {
   title: "Santrify",

@@ -1,7 +1,3 @@
-import React from 'react'
-
 export default function Beds() {
-  return (
-    <div>Beds</div>
-  )
+  return <div>Beds</div>;
 }

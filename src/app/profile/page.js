@@ -1,5 +1,3 @@
-import NavigasiBar from "../../components/NavigasiBar";
-
 export default function Profile() {
   return (
     <>
