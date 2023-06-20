@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 :root {
 	--bs-blue: #0d6efd;
 	--bs-indigo: #6610f2;
@@ -22,7 +23,7 @@
 	--bs-light: #f8f9fa;
 	--bs-dark: #212529;
 	--bs-back: #ebe9e9;
-	--bs-border:#bcbcbc;
+	--bs-border: #bcbcbc;
 	--bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
 		"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -83,15 +84,14 @@
 
 .menu a {
 	color: #ffff;
-	
 }
 
-.menu a:hover{
+.menu a:hover {
 	text-decoration: none;
 	color: inherit;
 }
 
-.sidebar-icon{
+.sidebar-icon {
 	width: 20px;
 }
 
@@ -113,11 +113,10 @@
 	border-radius: 50%;
 }
 
-
 /* -------insight------- */
 .insight-container {
 	background: var(--bs-light);
-  width: 77%;
+	width: 77%;
 	padding: 2rem;
 	border-radius: 10px;
 }
@@ -147,12 +146,10 @@
 }
 
 .title {
-	
 	font-weight: 200;
 }
 
 .value {
-	
 	margin-top: 20px;
 }
 
@@ -166,7 +163,7 @@
 }
 
 /* login page */
-.login{
+.login {
 	height: 100vh;
 }
 
@@ -175,15 +172,13 @@
 	font-weight: 600;
 	font-size: 32px;
 	line-height: 48px;
-	
 }
 
-.header p{
+.header p {
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
-	
 }
 
 .login-form label {
@@ -193,16 +188,16 @@
 	line-height: 24px;
 }
 
-.login-form input, .login-form .facebook{
+.login-form input,
+.login-form .facebook {
 	border: 1px solid var(--bs-border);
 	box-sizing: border-box;
 	border-radius: 8px;
 	background: var(--bs-white);
-
 }
 
-.login-form a, .login-form span{
-	
+.login-form a,
+.login-form span {
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
@@ -210,19 +205,18 @@
 	color: var(--bs-teal);
 }
 
-.fb{
+.fb {
 	width: 20px;
 	height: 20px;
 }
 
-.login-form .signin{
+.login-form .signin {
 	height: 42px;
 	border-radius: 8px;
 	color: var(--bs-white);
 	background-color: var(--bs-teal);
 }
 
-.sidebarLayout{
+.sidebarLayout {
 	display: flex;
 }
-
