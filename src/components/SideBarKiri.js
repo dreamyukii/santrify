@@ -5,7 +5,6 @@ import {
   faUser,
   faBed,
   faMoneyBill,
-  faClockRotateLeft,
   faArrowRightFromBracket,
   faHistory,
   faPerson,

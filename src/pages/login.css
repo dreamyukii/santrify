@@ -1,3 +1,4 @@
+/* Login */
 .btn-success {
 	border: none;
 	background-color: var(--bs-teal);
@@ -13,7 +14,6 @@
 }
 
 .bg-image {
-	background-image: url("/public/log-in.jpg");
 	background-size: cover;
 	background-position: center;
 }

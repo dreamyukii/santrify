@@ -3,9 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faTrashCan,
 	faPenToSquare,
-	faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import "./santri.css";
 export default function santri() {
 	return (
 		<>
