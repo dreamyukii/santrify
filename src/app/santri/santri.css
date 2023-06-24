@@ -13,3 +13,12 @@
 	color: #fff;
 	background-color: var(--bs-teal);
 }
+.form-floating label {
+	color: rgba(129, 129, 129, 0.5);
+}
+
+.form-control {
+	border: 1px solid #d1d1d1;
+	border-radius: 10px;
+}
+

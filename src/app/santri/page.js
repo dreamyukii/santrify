@@ -10,17 +10,24 @@ export default function santri() {
 	return (
 		<>
 			<div>
-				<div class="d-grid d-md-flex justify-content-md-end mb-5 ">
-					<button class="btn btn-light me-md-5" type="button">
-						Add Santri
-					</button>
-				</div>
+				<form className="d-flex flex-row-reverse">
+					<div className="form-floating me-2 mb-3 ">
+						<input
+							type="email"
+							className="form-control w-auto h-auto "
+							id="floatingInput"
+							placeholder="Email Address/Username"
+						/>
+						<label for="floatingInput">Search</label>
+					</div>
+				</form>
+
 				<table class="table table-hover">
-					<thead className="justify-content text-center">
+					<thead className="justify-content text-center table-success">
 						<tr>
 							<th scope="col">#id</th>
 							<th scope="col">Name</th>
-							<th scope="col">Sex</th>
+							<th scope="col">Gender</th>
 							<th scope="col">Status</th>
 							<th scope="col">Room</th>
 							<th scope="col">Division</th>
@@ -199,6 +206,35 @@ export default function santri() {
 						</tr>
 					</tbody>
 				</table>
+				<nav>
+					<ul class="pagination justify-content-end">
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">
+								1
+							</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">
+								2
+							</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#">
+								3
+							</a>
+						</li>
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 		</>
 	);
