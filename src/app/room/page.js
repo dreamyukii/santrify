@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {MdKeyboardArrowRight} from 'react-icons/md';
 export default function Room() {
   return (
     <>
@@ -19,12 +18,12 @@ export default function Room() {
               </div>
               <div className="card-body">
                 <div className="row">
-                  <div className="col">
+                  <div className="col-8 ">
                     <p className="card-title">Supri</p>
                   </div>
-                  <div className="col">
-                    <button type="button" className="btn-circle">
-                      <FontAwesomeIcon icon={faChevronRight} size="sm" />
+                  <div className="col-2">
+                  <button type="button" className="btn-circle">
+                      <MdKeyboardArrowRight style={{"fontSize": "5pt"}} size="sm"/>
                     </button>
                   </div>
                 </div>
