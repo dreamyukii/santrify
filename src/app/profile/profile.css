@@ -1,0 +1,10 @@
+
+.email, .address ,.name{
+    width: 28rem;
+}
+.post-code{
+    width: 8rem;
+}
+.upload{
+    width: 31rem;
+}
