@@ -4,20 +4,21 @@ import {
 	faTrashCan,
 	faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import "./santri.css"
 export default function santri() {
 	return (
 		<>
 			<div>
-				<form className="d-flex flex-row-reverse">
-					<div className="form-floating me-2 mb-3 ">
-						<input
-							type="email"
-							className="form-control w-auto h-auto "
-							id="floatingInput"
-							placeholder="Email Address/Username"
-						/>
-						<label for="floatingInput">Search</label>
-					</div>
+				<form class="flex-row-reverse d-flex mb-3">
+					<input
+						class="form-control me-2 search"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+					/>
+					<button class="btn btn-outline-success mx-2" type="submit">
+						Search
+					</button>
 				</form>
 
 				<table class="table table-hover">
