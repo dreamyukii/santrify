@@ -1,27 +1,26 @@
+import React from 'react'
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faTrashCan,
 	faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import "./santri.css"
-export default function santri() {
-	return (
-		<>
-			<div>
-				<form className="flex-row-reverse d-flex mb-3">
-					<input
-						className="form-control me-2 search"
-						type="search"
-						placeholder="Search"
-						aria-label="Search"
-					/>
-					<button className="btn btn-outline-success mx-2" type="submit">
-						Search
-					</button>
+export default function SantriList() {
+  return (
+    <div>
+				<form className="d-flex flex-row-reverse">
+					<div className="form-floating me-2 mb-3 ">
+						<input
+							type="email"
+							className="form-control w-auto h-auto "
+							id="floatingInput"
+							placeholder="Email Address/Username"
+						/>
+						<label for="floatingInput">Search</label>
+					</div>
 				</form>
 
-				<table className="table table-hover">
+				<table class="table table-hover">
 					<thead className="justify-content text-center table-success">
 						<tr>
 							<th scope="col">#id</th>
@@ -206,35 +205,34 @@ export default function santri() {
 					</tbody>
 				</table>
 				<nav>
-					<ul className="pagination justify-content-end">
-						<li className="page-item">
-							<a className="page-link" href="#" aria-label="Previous">
+					<ul class="pagination justify-content-end">
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Previous">
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 						</li>
-						<li className="page-item">
-							<a className="page-link" href="#">
+						<li class="page-item">
+							<a class="page-link" href="#">
 								1
 							</a>
 						</li>
-						<li className="page-item">
-							<a className="page-link" href="#">
+						<li class="page-item">
+							<a class="page-link" href="#">
 								2
 							</a>
 						</li>
-						<li className="page-item">
-							<a className="page-link" href="#">
+						<li class="page-item">
+							<a class="page-link" href="#">
 								3
 							</a>
 						</li>
-						<li className="page-item">
-							<a className="page-link" href="#" aria-label="Next">
+						<li class="page-item">
+							<a class="page-link" href="#" aria-label="Next">
 								<span aria-hidden="true">&raquo;</span>
 							</a>
 						</li>
 					</ul>
 				</nav>
 			</div>
-		</>
-	);
+  )
 }

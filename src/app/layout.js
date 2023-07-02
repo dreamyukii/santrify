@@ -5,7 +5,7 @@ import NavigasiBar from "../components/NavigasiBar";
 
 export const metadata = {
   title: "Santrify",
-  description: "Dashboard for Islamic Boarding School ",
+  description: "Dashboard for Islamic Boarding School",
 };
 
 export default function RootLayout({ children }) {
