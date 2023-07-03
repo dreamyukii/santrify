@@ -1,7 +1,13 @@
+import InformasiDana from "../components/InformasiDana";
+
 export default function Page() {
   return (
     <>
-      <h1>Dashboard</h1>
+      <div className="row d-flex">
+        <div className="col">
+          <InformasiDana/>
+        </div>
+      </div>
     </>
   );
 }
