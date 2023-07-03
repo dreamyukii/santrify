@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Profil from "../../public/Profil.png";
+import Profil from "../../../public/Profil.png";
 import { usePathname } from "next/navigation";
 export default function NavigasiBar() {
   // Navbar Title
@@ -28,7 +28,6 @@ export default function NavigasiBar() {
           </div>
           <div className="d-flex align-items-center gap-3">
             <Image src={Profil} alt="profile picture" className="" />
-            <h2>Quwue</h2>
           </div>
         </div>
       </div>

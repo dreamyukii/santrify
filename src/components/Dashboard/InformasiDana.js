@@ -1,14 +1,12 @@
 export default function InformasiDana() {
   return (
     <>
-      <div>
         <div className="card">
           <div className="card-body">
-            <p className="card-text">Dana Pesantren</p>
-            <p>$1000</p>
+            <p className="card-header">Dana Pesantren Tahun 2022</p>
+            <p className="card-text">$1000</p>
           </div>
         </div>
-      </div>
     </>
   );
 }
