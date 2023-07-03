@@ -1,10 +1,10 @@
+.pp-admin{
+    border-radius: 50%;
+}
 
-.email, .address ,.name{
-    width: 28rem;
+.form-control:focus{
+  border-color: #20c997;
+  box-shadow: none;
 }
-.post-code{
-    width: 8rem;
-}
-.upload{
-    width: 31rem;
-}
+
+
