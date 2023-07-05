@@ -173,3 +173,23 @@ label {
   background-color:#1e3d2f ;
 }
 
+/* dashboard */
+.dana-icon, .down-icon, .total-santri-icon{
+  width: 2rem;
+}
+.dana-icon{
+  color: var(--bs-teal);
+}
+.down-icon{
+  color: var(--bs-danger);
+}
+.total-santri-icon{
+  color: var(--bs-dark);
+}
+.card{
+  transition: box-shadow 0.3s;
+}
+.card:hover{
+box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
