@@ -9,10 +9,13 @@ import {
   faHistory,
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 export default function SideBarKiri() {
   return (
     <div className="sidebar position-sticky top-0 start-0 bottom-0 overflow-hidden">
-      <div className="logo"></div>
+      <div className="logo">
+       
+      </div>
 
       <ul className="menu position-relative p-0">
         <li>
@@ -83,7 +86,7 @@ export default function SideBarKiri() {
         </li>
         <li className="logout position-absolute bottom-0 w-100">
           <a
-            href="/login"
+            href="/"
             className="text-decoration-none d-flex align-items-center gap-3"
           >
             <div>

@@ -9,231 +9,117 @@ export default function santri() {
 	return (
 		<>
 			<div>
-				<form className="flex-row-reverse d-flex mb-3">
-					<input
-						className="form-control me-2 search"
-						type="search"
-						placeholder="Search"
-						aria-label="Search"
-					/>
-					<button className="btn btn-outline-success mx-2" type="submit">
-						Search
-					</button>
-				</form>
+				<div className="row">
+					<div className="col-3">
+						<button
+							tabIndex="-1"
+							type="button"
+							className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+						>
+							Add
+						</button>
+					</div>
+					<div className="col-5 offset-4">
+						<form className="flex-row-reverse d-flex mb-3">
+							<input
+								className="form-control me-2 search"
+								type="search"
+								placeholder="Search"
+								aria-label="Search"
+							/>
+							<button
+								className="btn btn-outline-success mx-2"
+								type="submit"
+							>
+								Search
+							</button>
+						</form>
+					</div>
+				</div>
 
 				<table className="table table-hover">
-					<thead className="justify-content text-center table-success">
+					<thead className="min-w-full divide-y divide-gray-200">
 						<tr>
-							<th scope="col">#id</th>
-							<th scope="col">Name</th>
-							<th scope="col">Gender</th>
-							<th scope="col">Status</th>
-							<th scope="col">Room</th>
-							<th scope="col">Division</th>
-							<th scope="col">Edit</th>
-							<th scope="col">Delete</th>
+							<th scope="col" className="px-6 py-3">
+								#id
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Name
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Gender
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Status
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Room
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Division
+							</th>
+							<th scope="col" className="px-6 py-3">
+								Action
+							</th>
 						</tr>
 					</thead>
-					<tbody className="justify-content text-center">
+					<tbody className="bg-white divide-y divide-gray-200">
 						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
+							<td className="px-6 py-4">1</td>
+							<td className="px-6 py-4">Spain</td>
+							<td className="px-6 py-4">Male</td>
+							<td className="px-6 py-4">Active</td>
+							<td className="px-6 py-4">Ahmad kecap</td>
+							<td className="px-6 py-4">Tafsir</td>
+							<td className="px-6 py-4">
+								<div className="flex items-center">
+									<button
+										tabIndex="-1"
+										type="button"
+										className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+									>
+										Edit
+									</button>
+									<button
+										tabIndex="-1"
+										type="button"
+										className="mx-1 px-4 py-2 text-sm text-white bg-danger rounded"
+									>
+										Hapus
+									</button>
+								</div>
 							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
+							<td className="px-6 py-4"></td>
 						</tr>
 						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
+							<td className="px-6 py-4">1</td>
+							<td className="px-6 py-4">Spain</td>
+							<td className="px-6 py-4">Male</td>
+							<td className="px-6 py-4">Active</td>
+							<td className="px-6 py-4">Ahmad kecap</td>
+							<td className="px-6 py-4">Tafsir</td>
+							<td className="px-6 py-4">
+								<div className="flex items-center">
+									<button
+										tabIndex="-1"
+										type="button"
+										className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+									>
+										Edit
+									</button>
+									<button
+										tabIndex="-1"
+										type="button"
+										className="mx-1 px-4 py-2 text-sm text-white bg-danger rounded"
+									>
+										Hapus
+									</button>
+								</div>
 							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
+							<td className="px-6 py-4"></td>
 						</tr>
 					</tbody>
 				</table>
-				<nav>
-					<ul className="pagination justify-content-end">
-						<li className="page-item">
-							<a className="page-link" href="#" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li className="page-item">
-							<a className="page-link" href="#">
-								1
-							</a>
-						</li>
-						<li className="page-item">
-							<a className="page-link" href="#">
-								2
-							</a>
-						</li>
-						<li className="page-item">
-							<a className="page-link" href="#">
-								3
-							</a>
-						</li>
-						<li className="page-item">
-							<a className="page-link" href="#" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
 			</div>
 		</>
 	);
