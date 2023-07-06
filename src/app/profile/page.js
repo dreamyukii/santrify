@@ -6,8 +6,8 @@ export default function Profile() {
 			<div>
 				<div className="container my-2">
 					<div className="row">
-						<div className="col-md-3">
-							<div className="d-flex flex column align-items-center py-5 p-2 ">
+						<div className="col-md-4">
+							<div className="d-flex justify-content-center py-5">
 								<Image
 									src="/pp.png"
 									width={300}
@@ -23,7 +23,7 @@ export default function Profile() {
 								</span>
 							</div>
 						</div>
-						<div class="col-md-6 border-right offset-1">
+						<div class="col-md-6 offset-1">
 							<div class="p-3 py-5">
 								<div class="d-flex justify-content-between align-items-center mb-3">
 									<h4 class="text-right">Profile Settings</h4>
@@ -35,7 +35,6 @@ export default function Profile() {
 											type="text"
 											class="form-control"
 											placeholder="Nickname"
-											value=""
 										/>
 									</div>
 								</div>
@@ -48,7 +47,6 @@ export default function Profile() {
 											type="text"
 											class="form-control"
 											placeholder="Email"
-											value=""
 										/>
 									</div>
 									<div class="col-md-12 mt-2">
@@ -59,7 +57,6 @@ export default function Profile() {
 											type="text"
 											class="form-control"
 											placeholder="Phone number"
-											value=""
 										/>
 									</div>
 									<div class="col-md-12 mt-2">
@@ -68,7 +65,6 @@ export default function Profile() {
 											type="text"
 											class="form-control"
 											placeholder="Address"
-											value=""
 										/>
 									</div>
 								</div>
@@ -79,7 +75,6 @@ export default function Profile() {
 											type="text"
 											class="form-control"
 											placeholder="Postcode"
-											value=""
 										/>
 									</div>
 									<div class="col-md-6">
@@ -94,6 +89,7 @@ export default function Profile() {
 											<option>Amikom</option>
 										</select>
 									</div>
+									
 								</div>
 								<div class="mt-5 text-center mx-4">
 									<button
