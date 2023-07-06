@@ -11,8 +11,10 @@ yarn dev
 # or
 pnpm dev
 ```
-
-php migrate
+1. composer install
+2. php artisan key:generate  
+3. php artisan cache:clear
+4. php artisan migrate
 
 php artisan serve
 
