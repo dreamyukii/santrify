@@ -1,238 +1,103 @@
-import React from 'react'
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faTrashCan,
-	faPenToSquare,
-} from "@fortawesome/free-solid-svg-icons";
-export default function SantriList() {
-  return (
-    <div>
-				<form className="d-flex flex-row-reverse">
-					<div className="form-floating me-2 mb-3 ">
-						<input
-							type="email"
-							className="form-control w-auto h-auto "
-							id="floatingInput"
-							placeholder="Email Address/Username"
-						/>
-						<label for="floatingInput">Search</label>
-					</div>
-				</form>
+"use client";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-				<table class="table table-hover">
-					<thead className="justify-content text-center table-success">
-						<tr>
-							<th scope="col">#id</th>
-							<th scope="col">Name</th>
-							<th scope="col">Gender</th>
-							<th scope="col">Status</th>
-							<th scope="col">Room</th>
-							<th scope="col">Division</th>
-							<th scope="col">Edit</th>
-							<th scope="col">Delete</th>
-						</tr>
-					</thead>
-					<tbody className="justify-content text-center">
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">1</th>
-							<td>Spain</td>
-							<td>Male</td>
-							<td>Active</td>
-							<td>Ahmad kecap</td>
-							<td>Tafsir</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faPenToSquare}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-							<td>
-								<Link href="/" className="icon-santri fs-6 ">
-									<div>
-										<FontAwesomeIcon
-											icon={faTrashCan}
-											className="sidebar-icon"
-										/>
-									</div>
-								</Link>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<nav>
-					<ul class="pagination justify-content-end">
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">
-								1
-							</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">
-								2
-							</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">
-								3
-							</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-  )
+//fetch with "getServerSideProps"
+export async function getServerSideProps() {
+  //http request
+  const req = await axios.get(`http://localhost:8000/api/santri`);
+  const res = req.data.data.data;
+  return res;
+}
+
+export default function SantriList(props) {
+  const [santri, setSantri] = useState([]);
+  useEffect(() => {
+    getServerSideProps()
+      .then((res) => {
+        setSantri(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return (
+    <>
+      <div>
+        <div className="row">
+          <div className="col-3">
+            <button
+              tabIndex="-1"
+              type="button"
+              className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+            >
+              Add
+            </button>
+          </div>
+          <div className="col-5 offset-4">
+            <form className="flex-row-reverse d-flex mb-3">
+              <button className="btn btn-outline-success mx-2" type="submit">
+                Search
+              </button>
+              <input
+                className="form-control me-2 search"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+
+        <table className="table table-hover">
+          <thead className="min-w-full divide-y divide-gray-200">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                ID
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Name
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Gender
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Status
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Room
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Division
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            {santri.map((post) => (
+              <tr key={post.id}>
+                <td>{post.id}</td>
+                <td>{post.nama}</td>
+                <td>{post.gender}</td>
+                <td>{post.status}</td>
+                <td>{post.room}</td>
+                <td>{post.division}</td>
+                <td className="text-center">
+                  <button className="btn btn-sm btn-primary border-0 shadow-sm mb-3 me-3">
+                    EDIT
+                  </button>
+                  <button className="btn btn-sm btn-danger border-0 shadow-sm mb-3">
+                    DELETE
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
 }
