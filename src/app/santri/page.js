@@ -1,9 +1,4 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faTrashCan,
-	faPenToSquare,
-} from "@fortawesome/free-solid-svg-icons";
 import "./santri.css"
 export default function santri() {
 	return (
@@ -21,18 +16,18 @@ export default function santri() {
 					</div>
 					<div className="col-5 offset-4">
 						<form className="flex-row-reverse d-flex mb-3">
+						<button
+								className="btn btn-outline-success mx-2"
+								type="submit"
+							>
+								Search
+							</button>
 							<input
 								className="form-control me-2 search"
 								type="search"
 								placeholder="Search"
 								aria-label="Search"
 							/>
-							<button
-								className="btn btn-outline-success mx-2"
-								type="submit"
-							>
-								Search
-							</button>
 						</form>
 					</div>
 				</div>

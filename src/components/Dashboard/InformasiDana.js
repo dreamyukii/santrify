@@ -5,7 +5,7 @@ import {
 export default function InformasiDana() {
 	return (
 		<>
-			<div className="card">
+			<div className="card dashboard">
 				<div className="card-body">
 					<div className="row">
 						<div className="col-8">

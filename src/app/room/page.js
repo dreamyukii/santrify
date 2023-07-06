@@ -19,9 +19,12 @@ export default function Room() {
               <div className="card-body">
                 <div className="row">
                   <div className="col-8 ">
-                    <p className="card-title">Supri</p>
+                    <h3 className="card-title">Santri</h3>
+                    <p>Faizal</p>
+                    <p>Abdul Fatah</p>
+                    <p>Sultan</p>
                   </div>
-                  <div className="col-2">
+                  <div className="col-2 pt-5 mt-2">
                   <button type="button" className="btn-circle">
                       <MdKeyboardArrowRight style={{"fontSize": "5pt"}} size="sm"/>
                     </button>

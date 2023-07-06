@@ -186,10 +186,10 @@ label {
 .total-santri-icon{
   color: var(--bs-dark);
 }
-.card{
+.dashboard{
   transition: box-shadow 0.3s;
 }
-.card:hover{
+.dashboard:hover{
 box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
 
