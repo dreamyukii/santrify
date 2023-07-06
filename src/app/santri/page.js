@@ -1,22 +1,23 @@
 import Link from "next/link";
-import "./santri.css"
+import "./santri.css";
 export default function santri() {
 	return (
 		<>
 			<div>
 				<div className="row">
 					<div className="col-3">
-						<button
-							tabIndex="-1"
-							type="button"
-							className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
-						>
-							Add
-						</button>
+						<Link href="./add.js">
+							<button
+								type="button"
+								className="btn btn-outline-success"
+							>
+								Add
+							</button>
+						</Link>
 					</div>
 					<div className="col-5 offset-4">
 						<form className="flex-row-reverse d-flex mb-3">
-						<button
+							<button
 								className="btn btn-outline-success mx-2"
 								type="submit"
 							>
