@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 //fetch with "getServerSideProps"
 export async function getServerSideProps() {
@@ -9,6 +10,19 @@ export async function getServerSideProps() {
   const res = req.data.data.data;
   return res;
 }
+
+const refreshData = () => {
+  router.replace(router.asPath);
+}
+
+const deleteSantri = async (id) => {
+      //sending
+      await axios.delete(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`);
+      //refresh data
+      refreshData();
+
+  }
+
 
 export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
@@ -25,31 +39,6 @@ export default function SantriList(props) {
   return (
     <>
       <div>
-        <div className="row">
-          <div className="col-3">
-            <button
-              tabIndex="-1"
-              type="button"
-              className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
-            >
-              Add
-            </button>
-          </div>
-          <div className="col-5 offset-4">
-            <form className="flex-row-reverse d-flex mb-3">
-              <button className="btn btn-outline-success mx-2" type="submit">
-                Search
-              </button>
-              <input
-                className="form-control me-2 search"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </form>
-          </div>
-        </div>
-
         <table className="table table-hover">
           <thead className="min-w-full divide-y divide-gray-200">
             <tr>
@@ -71,7 +60,7 @@ export default function SantriList(props) {
               <th scope="col" className="px-6 py-3">
                 Division
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="text-center px-6 py-3">
                 Action
               </th>
             </tr>
@@ -86,10 +75,18 @@ export default function SantriList(props) {
                 <td>{post.room}</td>
                 <td>{post.division}</td>
                 <td className="text-center">
-                  <button className="btn btn-sm btn-primary border-0 shadow-sm mb-3 me-3">
-                    EDIT
-                  </button>
-                  <button className="btn btn-sm btn-danger border-0 shadow-sm mb-3">
+                  {/* add santri */}
+                  <Link href={`/dashboard/santri/edit/${post.id}`}>
+                    <button className="btn btn-sm btn-primary border-0 shadow-sm mb-3 me-3">
+                      EDIT
+                    </button>
+                  </Link>
+
+                  {/* delete santri */}
+                  <button
+                    onClick={() => deleteSantri(post.id)}
+                    className="btn btn-sm btn-danger border-0 shadow-sm mb-3"
+                  >
                     DELETE
                   </button>
                 </td>

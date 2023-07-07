@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.css";
 import "./login.css";
 export default function Login() {

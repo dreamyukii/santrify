@@ -1,8 +1,8 @@
-import DanaKeluar from "../components/Dashboard/DanaKeluar";
-import JumlahSantri from "../components/Dashboard/JumlahSantri";
-import KamarKosong from "../components/Dashboard/KamarKosong";
-import InformasiDana from "../components/Dashboard/InformasiDana";
-import ChartSantri from "../components/Dashboard/ChartSantri";
+import DanaKeluar from "../../components/Dashboard/DanaKeluar";
+import JumlahSantri from "../../components/Dashboard/JumlahSantri";
+import KamarKosong from "../../components/Dashboard/KamarKosong";
+import InformasiDana from "../../components/Dashboard/InformasiDana";
+import ChartSantri from "../../components/Dashboard/ChartSantri";
 export default function Page() {
   return (
     <>
@@ -22,7 +22,7 @@ export default function Page() {
               <KamarKosong />
             </div>
             <div className="row">
-              <div className="col-6 col-md-4">
+              <div className="col-12">
                 <ChartSantri/>
               </div>
             </div>

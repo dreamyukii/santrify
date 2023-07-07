@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 export default function NavigasiBar() {
   // Navbar Title
   const navbarName = {
-    "/": "Dashboard",
-    "/santri": "Santri",
-    "/room": "Room",
-    "/bill": "Bill",
-    "/profile": "Profile",
-    "/history": "History",
+    "/dashboard": "Dashboard",
+    "/dashboard/santri": "Santri",
+    "/dashboard/room": "Room",
+    "/dashboard/bill": "Bill",
+    "/dashboard/profile": "Profile",
+    "/dashboard/history": "History",
   };
   const [title, setTitle] = useState("");
   const pathname = usePathname();

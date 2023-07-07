@@ -9,7 +9,6 @@ import {
   faHistory,
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
 export default function SideBarKiri() {
   return (
     <div className="sidebar position-sticky top-0 start-0 bottom-0 overflow-hidden">
@@ -20,7 +19,7 @@ export default function SideBarKiri() {
       <ul className="menu position-relative p-0">
         <li>
           <Link
-            href="/"
+            href="/dashboard"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
@@ -31,7 +30,7 @@ export default function SideBarKiri() {
         </li>
         <li>
           <Link
-            href="/santri"
+            href="/dashboard/santri"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
@@ -42,7 +41,7 @@ export default function SideBarKiri() {
         </li>
         <li>
         <Link
-            href="/room"
+            href="/dashboard/room"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
@@ -53,7 +52,7 @@ export default function SideBarKiri() {
         </li>
         <li>
         <Link
-            href="/bill"
+            href="/dashboard/bill"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
@@ -64,7 +63,7 @@ export default function SideBarKiri() {
         </li>
         <li>
         <Link
-            href="/profile"
+            href="/dashboard/profile"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
@@ -75,7 +74,7 @@ export default function SideBarKiri() {
         </li>
         <li>
         <Link
-            href="/history"
+            href="/dashboard/history"
             className="text-decoration-none fs-6 d-flex align-items-center gap-3"
           >
             <div>
@@ -86,7 +85,7 @@ export default function SideBarKiri() {
         </li>
         <li className="logout position-absolute bottom-0 w-100">
           <a
-            href="/"
+            href="/login"
             className="text-decoration-none d-flex align-items-center gap-3"
           >
             <div>
