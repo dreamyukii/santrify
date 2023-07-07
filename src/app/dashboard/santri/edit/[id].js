@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 //import router
-import Router from 'next/router';
+import Router from 'next/navigation';
 
 //import layout
 // import Layout from "../../../components/Backend/Layout";
@@ -14,8 +14,8 @@ import axios from "axios";
 export async function getServerSideProps({ params }) {
 
     //http request
-    const req  = await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${params.id}`)
-    const res  = await req.data.data
+    const req  = await axios.get(`http://localhost:8000/api/santri/${params.id}`)
+    const res  = await req.data.data.data;
 
     return {
       props: {
@@ -25,7 +25,7 @@ export async function getServerSideProps({ params }) {
   }
 
 function PostEdit(props) {
-
+    
     //destruct
     const { santri } = props;
 
