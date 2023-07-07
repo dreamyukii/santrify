@@ -11,18 +11,6 @@ export async function getServerSideProps() {
   return res;
 }
 
-const refreshData = () => {
-  router.replace(router.asPath);
-}
-
-const deleteSantri = async (id) => {
-      //sending
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`);
-      //refresh data
-      refreshData();
-
-  }
-
 
 export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
