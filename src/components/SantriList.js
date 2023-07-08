@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 //fetch with "getServerSideProps"
 export async function getServerSideProps() {
   //http request
-  
   const req = await axios.get(`http://localhost:8000/api/santri`);
   const res = req.data.data.data;
   return res;
@@ -17,7 +16,7 @@ export async function getServerSideProps() {
 
 
 export default function SantriList(props) {
-  
+  const [santri, setSantri] = useState([])
 
   // const router = useRouter();
   const router = useRouter();
@@ -27,28 +26,31 @@ export default function SantriList(props) {
       router.replace(router.asPath);
     }
   }
+
+  const getSantri = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8000/api/santri`);
+      setSantri(response.data.data.data)
+      console.log(response.data.data.data)
+    } catch (error) {
+      console.log(error.messsage)
+    }
+  }
+// Delete santri
   const deleteSantri = async (res) => {
     try {
       const response = await axios.delete(`http://localhost:8000/api/santri/${res}`);
-      refreshData()
-  
+      getSantri()
       // Handle the response after deleting the item
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       // Handle any errors that occur during the request
       console.error(error);
     }
   };
   
-  const [santri, setSantri] = useState([]);
   useEffect(() => {
-    getServerSideProps()
-      .then((res) => {
-        setSantri(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    getSantri();
   }, []);
 
   return (
@@ -93,7 +95,7 @@ export default function SantriList(props) {
                   {/* add santri */}
                   <Link href={`/dashboard/santri/edit/${post.id}`}>
                     <button className="btn btn-sm btn-primary border-0 shadow-sm mb-3 me-3">
-                      EDIT
+                      Edit
                     </button>
                   </Link>
 
@@ -102,7 +104,7 @@ export default function SantriList(props) {
                     onClick={() => deleteSantri(post.id)}
                     className="btn btn-sm btn-danger border-0 shadow-sm mb-3"
                   >
-                    DELETE
+                    Delete
                   </button>
                 </td>
               </tr>

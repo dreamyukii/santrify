@@ -175,3 +175,23 @@ function PostEdit(props) {
 }
 
 export default PostEdit
+//fetch with "getServerSideProps"
+// export async function getServerSideProps({ params }) {
+//   //http request
+//   const req = await axios.get(
+//     `http://localhost:8000/api/santri/api/santri/${params.id}`
+//   );
+//   const res = await req.data.data;
+//   return res;
+// }
+
+// export default function Page({params}){
+//   return (
+//     <>
+//     {params.id}
+//     </>
+//   );
+// };
+
+  //destruct
+  // const { santri } = res;
