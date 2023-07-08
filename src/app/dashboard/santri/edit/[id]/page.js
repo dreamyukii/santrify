@@ -9,36 +9,36 @@ import { useRouter } from "next/navigation";
 //import axios
 import axios from "axios";
 
-
-function Page({params}) {
-  const id = params.id
-
+function Page({ params }) {
+  const id = params.id;
 
   //state
-  const [santri, setSantri] = useState({})
+  const [santri, setSantri] = useState({});
   const [gambar, setGambar] = useState("");
   const [nama, setNama] = useState(santri.nama);
   const [gender, setGender] = useState(santri.gender);
   const [room, setRoom] = useState(santri.room);
   const [status, setStatus] = useState(santri.status);
   const [division, setDivision] = useState(santri.division);
-  const navigate = useRouter()
+  const navigate = useRouter();
 
   //state validation
   const [validation, setValidation] = useState({});
 
   const getSantriById = async (id) => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/santri/${id}`)
-      setNama(data.data.nama)
-      setGender(data.data.gender)
-      setRoom(data.data.room)
-      setStatus(data.data.status)
-      setDivision(data.data.division)
+      const { data } = await axios.get(
+        `http://localhost:8000/api/santri/${id}`
+      );
+      setNama(data.data.nama);
+      setGender(data.data.gender);
+      setRoom(data.data.room);
+      setStatus(data.data.status);
+      setDivision(data.data.division);
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
-  }
+  };
 
   //function "handleFileChange"
   const handleFileChange = (e) => {
@@ -90,9 +90,9 @@ function Page({params}) {
     // })
   };
 
-  useEffect(()=>{
-    getSantriById(id)
-  },[])
+  useEffect(() => {
+    getSantriById(id);
+  }, []);
 
   return (
     // <Layout>
@@ -184,10 +184,11 @@ function Page({params}) {
                 )}
 
                 <button
-                  className="btn btn-primary border-0 shadow-sm"
+                  tabIndex="-1"
                   type="submit"
+                  className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
                 >
-                  UPDATE
+                  Save
                 </button>
               </form>
             </div>

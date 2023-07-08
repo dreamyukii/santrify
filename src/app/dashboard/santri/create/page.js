@@ -1,16 +1,10 @@
 "use client";
 import { useState } from 'react';
 
-//import router
-import Router from 'next/router';
-
 //import axios
 import axios from "axios";
-
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-
-
 
 function SantriCreate() {
 
@@ -84,12 +78,12 @@ function SantriCreate() {
                                     <form onSubmit={ storePost }>
     
                                         <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">Image</label>
+                                            <label className="form-label fw-bold">Gambar</label>
                                             <input type="file" className="form-control" onChange={handleFileChange}/>
                                         </div>
     
                                         <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">NAMA</label>
+                                            <label className="form-label fw-bold">Nama</label>
                                             <input className="form-control" type="text" value={nama} onChange={(e) => setNama(e.target.value)} placeholder="Masukkan Nama" />
                                         </div>
                                         {
@@ -100,8 +94,11 @@ function SantriCreate() {
                                         }
     
                                         <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">GENDER</label>
-                                            <textarea className="form-control" rows={3} value={gender} onChange={(e) => setGender(e.target.value)} placeholder="Masukkan Gender" />
+                                            <label className="form-label fw-bold">Jenis Kelamin</label>
+                                            <select className="form-select" rows={3} value={gender} onChange={(e) => setGender(e.target.value)} placeholder="Masukkan Gender" >
+                                                <option value={"Laki-Laki"}>Laki-Laki</option>
+                                                <option value={"Perempuan"}>Perempuan</option>
+                                            </select>
                                         </div>
                                         {
                                             validation.gender &&
@@ -111,7 +108,7 @@ function SantriCreate() {
                                         }
     
                                         <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">STATUS</label>
+                                            <label className="form-label fw-bold">Status</label>
                                             <textarea className="form-control" rows={3} value={status} onChange={(e) => setStatus(e.target.value)} placeholder="Masukkan Status" />
                                         </div>
                                         {
@@ -143,8 +140,8 @@ function SantriCreate() {
                                                 </div>
                                         }
     
-                                        <button className="btn btn-primary border-0 shadow-sm" type="submit">
-                                            SIMPAN
+                                        <button className="btn btn-primary border-0 text-white btn-success shadow-sm" type="submit">
+                                            Simpan
                                         </button>
                                     </form>
                                 </div>
@@ -155,5 +152,4 @@ function SantriCreate() {
             // {/* </Layout> */}
       );
     };
-
-export default SantriCreate
+export default SantriCreate;
