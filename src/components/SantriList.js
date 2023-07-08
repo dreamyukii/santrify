@@ -63,22 +63,22 @@ export default function SantriList(props) {
                 ID
               </th>
               <th scope="col" className="px-6 py-3">
-                Name
+                Nama
               </th>
               <th scope="col" className="px-6 py-3">
-                Gender
+                Jenis Kelamin
               </th>
               <th scope="col" className="px-6 py-3">
                 Status
               </th>
               <th scope="col" className="px-6 py-3">
-                Room
+                Kamar
               </th>
               <th scope="col" className="px-6 py-3">
-                Division
+                Divisi
               </th>
-              <th scope="col" className="text-center px-6 py-3">
-                Action
+              <th scope="col" className="px-6 py-3">
+                Aksi
               </th>
             </tr>
           </thead>
@@ -94,18 +94,25 @@ export default function SantriList(props) {
                 <td className="text-center">
                   {/* add santri */}
                   <Link href={`/dashboard/santri/edit/${post.id}`}>
-                    <button className="btn btn-sm btn-primary border-0 shadow-sm mb-3 me-3">
-                      Edit
-                    </button>
+                    <button
+									tabIndex="-1"
+									type="button"
+									className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+								>
+									Edit
+								</button>
                   </Link>
 
                   {/* delete santri */}
+
                   <button
-                    onClick={() => deleteSantri(post.id)}
-                    className="btn btn-sm btn-danger border-0 shadow-sm mb-3"
-                  >
-                    Delete
-                  </button>
+                  onClick={() => deleteSantri(post.id)}
+									tabIndex="-1"
+									type="button"
+									className="mx-1 px-4 py-2 text-sm text-white bg-danger rounded"
+								>
+									Hapus
+								</button>
                 </td>
               </tr>
             ))}

@@ -8,6 +8,8 @@ export default function NavigasiBar() {
   const navbarName = {
     "/dashboard": "Dashboard",
     "/dashboard/santri": "Santri",
+    "/dashboard/santri/create": "Add Santri",
+    "/dashboard/santri/edit": "Edit Santri",
     "/dashboard/room": "Room",
     "/dashboard/bill": "Bill",
     "/dashboard/profile": "Profile",
