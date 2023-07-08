@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation';
 
 
 
+
 function SantriCreate() {
 
     //state
@@ -76,84 +77,137 @@ function SantriCreate() {
       }, []);
     
       return (
-        <div className="container" style={{ marginTop: '80px' }}>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="card border-0 rounded shadow-sm">
-                                <div className="card-body">
-                                    <form onSubmit={ storePost }>
-    
-                                        <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">Image</label>
-                                            <input type="file" className="form-control" onChange={handleFileChange}/>
-                                        </div>
-    
-                                        <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">NAMA</label>
-                                            <input className="form-control" type="text" value={nama} onChange={(e) => setNama(e.target.value)} placeholder="Masukkan Nama" />
-                                        </div>
-                                        {
-                                            validation.nama &&
-                                                <div className="alert alert-danger">
-                                                    {validation.nama}
-                                                </div>
-                                        }
-    
-                                        <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">GENDER</label>
-                                            <textarea className="form-control" rows={3} value={gender} onChange={(e) => setGender(e.target.value)} placeholder="Masukkan Gender" />
-                                        </div>
-                                        {
-                                            validation.gender &&
-                                                <div className="alert alert-danger">
-                                                    {validation.gender}
-                                                </div>
-                                        }
-    
-                                        <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">STATUS</label>
-                                            <textarea className="form-control" rows={3} value={status} onChange={(e) => setStatus(e.target.value)} placeholder="Masukkan Status" />
-                                        </div>
-                                        {
-                                            validation.status &&
-                                                <div className="alert alert-danger">
-                                                    {validation.status}
-                                                </div>
-                                        }
-    
-                                        <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">ROOM</label>
-                                            <textarea className="form-control" rows={3} value={room} onChange={(e) => setRoom(e.target.value)} placeholder="Masukkan Room" />
-                                        </div>
-                                        {
-                                            validation.room &&
-                                                <div className="alert alert-danger">
-                                                    {validation.room}
-                                                </div>
-                                        }
-    
-                                        <div className="form-group mb-3">
-                                            <label className="form-label fw-bold">DIVISION</label>
-                                            <textarea className="form-control" rows={3} value={division} onChange={(e) => setDivision(e.target.value)} placeholder="Masukkan Division" />
-                                        </div>
-                                        {
-                                            validation.division &&
-                                                <div className="alert alert-danger">
-                                                    {validation.division}
-                                                </div>
-                                        }
-    
-                                        <button className="btn btn-primary border-0 shadow-sm" type="submit">
-                                            SIMPAN
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            // {/* </Layout> */}
-      );
+			<div className="container" style={{ marginTop: "80px" }}>
+				<div className="row">
+					<div className="col-md-12">
+						<div className="card border-0 rounded shadow-sm">
+							<div className="card-body">
+								<form onSubmit={storePost}>
+									<div className="form-group mb-3">
+										<label className="form-label fw-bold">
+											Image
+										</label>
+										<input
+											type="file"
+											className="form-control"
+											onChange={handleFileChange}
+										/>
+									</div>
+
+									<div className="form-group mb-3">
+										<label className="form-label fw-bold">
+											NAMA
+										</label>
+										<input
+											className="form-control"
+											type="text"
+											value={nama}
+											onChange={(e) =>
+												setNama(e.target.value)
+											}
+											placeholder="Masukkan Nama"
+										/>
+									</div>
+									{validation.nama && (
+										<div className="alert alert-danger">
+											{validation.nama}
+										</div>
+									)}
+
+									<div className="form-group mb-3">
+										<label className="form-label fw-bold">
+											GENDER
+										</label>
+										<textarea
+											className="form-control"
+											rows={1}
+											value={gender}
+											onChange={(e) =>
+												setGender(e.target.value)
+											}
+											placeholder="Masukkan Gender"
+										/>
+									</div>
+									{validation.gender && (
+										<div className="alert alert-danger">
+											{validation.gender}
+										</div>
+									)}
+
+									<div className="form-group mb-3">
+										<label className="form-label fw-bold">
+											STATUS
+										</label>
+										<textarea
+											className="form-control"
+											rows={1}
+											value={status}
+											onChange={(e) =>
+												setStatus(e.target.value)
+											}
+											placeholder="Masukkan Status"
+										/>
+									</div>
+									{validation.status && (
+										<div className="alert alert-danger">
+											{validation.status}
+										</div>
+									)}
+
+									<div className="form-group mb-3">
+										<label className="form-label fw-bold">
+											ROOM
+										</label>
+										<textarea
+											className="form-control"
+											rows={1}
+											value={room}
+											onChange={(e) =>
+												setRoom(e.target.value)
+											}
+											placeholder="Masukkan Room"
+										/>
+									</div>
+									{validation.room && (
+										<div className="alert alert-danger">
+											{validation.room}
+										</div>
+									)}
+
+									<div className="form-group mb-3">
+										<label className="form-label fw-bold">
+											DIVISION
+										</label>
+										<textarea
+											className="form-control"
+											rows={1}
+											value={division}
+											onChange={(e) =>
+												setDivision(e.target.value)
+											}
+											placeholder="Masukkan Division"
+										/>
+									</div>
+									{validation.division && (
+										<div className="alert alert-danger">
+											{validation.division}
+										</div>
+									)}
+
+									<button
+										className="btn btn-outline-success border-1 shadow-sm "
+										type="submit"
+									>
+										SIMPAN
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			// {/* </Layout> */}
+		);
     };
 
 export default SantriCreate

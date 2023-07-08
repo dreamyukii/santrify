@@ -11,7 +11,7 @@ export default function santri() {
               <button
                 tabIndex="-1"
                 type="button"
-                className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+                className="mx-1 px-4 py-2 text-sm text-white bg-success rounded add"
               >
                 Add
               </button>
