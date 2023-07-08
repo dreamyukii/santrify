@@ -2,17 +2,44 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
+
 
 //fetch with "getServerSideProps"
 export async function getServerSideProps() {
   //http request
+  
   const req = await axios.get(`http://localhost:8000/api/santri`);
   const res = req.data.data.data;
   return res;
 }
 
 
+
 export default function SantriList(props) {
+  
+
+  // const router = useRouter();
+  const router = useRouter();
+
+  const refreshData = () => {
+    if (router?.asPath?.startsWith) {
+      router.replace(router.asPath);
+    }
+  }
+  const deleteSantri = async (res) => {
+    try {
+      const response = await axios.delete(`http://localhost:8000/api/santri/${res}`);
+      refreshData()
+  
+      // Handle the response after deleting the item
+      console.log(response.data);
+    } catch (error) {
+      // Handle any errors that occur during the request
+      console.error(error);
+    }
+  };
+  
   const [santri, setSantri] = useState([]);
   useEffect(() => {
     getServerSideProps()

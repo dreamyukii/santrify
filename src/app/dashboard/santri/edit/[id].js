@@ -1,5 +1,6 @@
-//import hook useState
+"use client";
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 //import router
 import Router from 'next/navigation';
@@ -14,20 +15,18 @@ import axios from "axios";
 export async function getServerSideProps({ params }) {
 
     //http request
-    const req  = await axios.get(`http://localhost:8000/api/santri/${params.id}`)
-    const res  = await req.data.data.data;
-
-    return {
-      props: {
-          santri: res // <-- assign response
-      },
-    }
+    const req  = await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${params.id}`)
+    const res  = await req.data.data
+    return res;
   }
 
-function PostEdit(props) {
+
+  
+function PostEdit(res) {
     
+
     //destruct
-    const { santri } = props;
+    const { santri } = res;
 
     //state
     const [gambar, setGambar] = useState('');
