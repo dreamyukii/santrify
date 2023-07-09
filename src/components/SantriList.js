@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
-
+import { useRouter } from "next/navigation";
+import Image from "next/image"
 
 //fetch with "getServerSideProps"
 export async function getServerSideProps() {
@@ -13,42 +13,40 @@ export async function getServerSideProps() {
   return res;
 }
 
-
-
 export default function SantriList(props) {
-  const [santri, setSantri] = useState([])
-
-  // const router = useRouter();
+  const [santri, setSantri] = useState([]);
   const router = useRouter();
 
   const refreshData = () => {
     if (router?.asPath?.startsWith) {
       router.replace(router.asPath);
     }
-  }
+  };
 
   const getSantri = async () => {
     try {
       const response = await axios.get(`http://localhost:8000/api/santri`);
-      setSantri(response.data.data.data)
-      console.log(response.data.data.data)
+      setSantri(response.data.data.data);
+      console.log(response.data.data.data);
     } catch (error) {
-      console.log(error.messsage)
-    }
-  }
-// Delete santri
-  const deleteSantri = async (res) => {
-    try {
-      const response = await axios.delete(`http://localhost:8000/api/santri/${res}`);
-      getSantri()
-      // Handle the response after deleting the item
-      // console.log(response.data);
-    } catch (error) {
-      // Handle any errors that occur during the request
-      console.error(error);
+      console.log(error.messsage);
     }
   };
-  
+  // Delete santri
+  const deleteSantri = async (res) => {
+      try {
+        const response = await axios.delete(
+          `http://localhost:8000/api/santri/${res}`
+        );
+        getSantri();
+        // Handle the response after deleting the item
+        // console.log(response.data);
+      } catch (error) {
+        // Handle any errors that occur during the request
+        console.error(error);
+      }
+  };
+
   useEffect(() => {
     getSantri();
   }, []);
@@ -92,27 +90,25 @@ export default function SantriList(props) {
                 <td>{post.room}</td>
                 <td>{post.division}</td>
                 <td className="text-center">
-                  {/* add santri */}
+                  {/* edit santri */}
                   <Link href={`/dashboard/santri/edit/${post.id}`}>
                     <button
-									tabIndex="-1"
-									type="button"
-									className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
-								>
-									Edit
-								</button>
+                      tabIndex="-1"
+                      type="button"
+                      className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+                    >
+                      Edit
+                    </button>
                   </Link>
-
                   {/* delete santri */}
-
                   <button
-                  onClick={() => deleteSantri(post.id)}
-									tabIndex="-1"
-									type="button"
-									className="mx-1 px-4 py-2 text-sm text-white bg-danger rounded"
-								>
-									Hapus
-								</button>
+                    onClick={() => deleteSantri(post.id)}
+                    tabIndex="-1"
+                    type="button"
+                    className="mx-1 px-4 py-2 text-sm text-white bg-danger rounded"
+                  >
+                    Hapus
+                  </button>
                 </td>
               </tr>
             ))}
