@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-
+import Image from "next/image";
 export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
   const getSantri = async () => {
@@ -68,6 +68,7 @@ export default function SantriList(props) {
             {santri.map((post) => (
               <tr key={post.id}>
                 <td>{post.id}</td>
+                <td><img src={`http://localhost:8000/storage/santri/${post.gambar}`} width={200} height={200}/></td>
                 <td>{post.nama}</td>
                 <td>{post.gender}</td>
                 <td>{post.status}</td>

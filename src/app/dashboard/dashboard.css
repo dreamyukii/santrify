@@ -178,7 +178,8 @@ label {
 
 /* dashboard */
 .dana-icon, .down-icon, .total-santri-icon{
-  width: 2rem;
+  width: 2rem !important;
+  font-size: 24pt;
 }
 .dana-icon{
   color: var(--bs-teal);

@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faDollarSign
 } from "@fortawesome/free-solid-svg-icons";
+
 export default function InformasiDana() {
 	return (
 		<>
