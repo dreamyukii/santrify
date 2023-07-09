@@ -134,8 +134,10 @@ function Page({ params }) {
                     onChange={(e) => setGender(e.target.value)}
                     placeholder="Masukkan Gender"
                   >
-                    <option value={"Laki-Laki"}>Laki-Laki</option>
+                        <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
+                    <option selected></option>
+
                   </select>
                 </div>
                 {validation.gender && (

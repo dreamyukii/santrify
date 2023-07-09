@@ -54,7 +54,7 @@ export default function LoginPage() {
                     <h1 className="login-heading mb-0 ">Login</h1>
                     <p className="small ">Enter Your Details to Continue</p>
                   </div>
-                  <form onSubmit={loginHandler}>
+                  {/* <form onSubmit={loginHandler}>
                     <div className="form-floating">
                       <input
                         type="email"
@@ -101,8 +101,34 @@ export default function LoginPage() {
                           Login
                         </button>
                     </div>
-                  </form>
-                  
+                  </form> */}
+                  <form onSubmit={loginHandler}>
+                                    <div className="mb-3">
+                                        <label className="form-label">ALAMAT EMAIL</label>
+                                        <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukkan Alamat Email"/>
+                                    </div>
+                                    {
+                                        validation.email && (
+                                            <div className="alert alert-danger">
+                                                {validation.email[0]}
+                                            </div>
+                                        )
+                                    }
+                                    <div className="mb-3">
+                                        <label className="form-label">PASSWORD</label>
+                                        <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Masukkan Password"/>
+                                    </div>
+                                    {
+                                        validation.password && (
+                                            <div className="alert alert-danger">
+                                                {validation.password[0]}
+                                            </div>
+                                        )
+                                    }
+                                    <div className="d-grid gap-2">
+                                        <button type="submit" className="btn btn-primary">LOGIN</button>
+                                    </div>
+                                </form>
                 </div>
               </div>
             </div>

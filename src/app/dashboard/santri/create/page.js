@@ -22,7 +22,7 @@ function SantriCreate() {
     const [validation, setValidation] = useState({});
     const Header = () => {
         const router = useRouter();
-      } 
+      }
 
     //function "handleFileChange"
     const handleFileChange = (e) => {
@@ -45,10 +45,10 @@ function SantriCreate() {
     //method "storePost"
     const storePost = async (e) => {
         e.preventDefault();
-    
+
         // Define formData
         const formData = new FormData();
-    
+
         // Append data to "formData"
         formData.append('gambar', gambar);
         formData.append('nama', nama);
@@ -56,18 +56,18 @@ function SantriCreate() {
         formData.append('room', room);
         formData.append('status', status);
         formData.append('division', division);
-    
+
         // Send data to the server
         await axios.post(`http://localhost:8000/api/santri`, formData);
-    
+
         // Redirect to '/santri'
         router.push('/dashboard/santri');
       };
-    
+
       useEffect(() => {
         // Code to run on component mount
       }, []);
-    
+      console.log(gender);
       return (
         <div className="container" style={{ marginTop: '80px' }}>
                     <div className="row">
@@ -75,12 +75,11 @@ function SantriCreate() {
                             <div className="card border-0 rounded shadow-sm">
                                 <div className="card-body">
                                     <form onSubmit={ storePost }>
-    
                                         <div className="form-group mb-3">
                                             <label className="form-label fw-bold">Gambar</label>
                                             <input type="file" className="form-control" onChange={handleFileChange}/>
                                         </div>
-    
+
                                         <div className="form-group mb-3">
                                             <label className="form-label fw-bold">Nama</label>
                                             <input className="form-control" type="text" value={nama} onChange={(e) => setNama(e.target.value)} placeholder="Masukkan Nama" />
@@ -91,13 +90,16 @@ function SantriCreate() {
                                                     {validation.nama}
                                                 </div>
                                         }
-    
+
                                         <div className="form-group mb-3">
                                             <label className="form-label fw-bold">Jenis Kelamin</label>
-                                            <select className="form-select" rows={3} value={gender} onChange={(e) => setGender(e.target.value)} placeholder="Masukkan Gender" >
-                                                <option value={"Laki-Laki"}>Laki-Laki</option>
-                                                <option value={"Perempuan"}>Perempuan</option>
+                                            <select className="form-select" rows={3} onChange={(e) => setGender(e.target.value)} placeholder="Masukkan Gender" >
+                                                    <option value={"Laki-Laki"}>Laki-Laki</option>
+                    <option value={"Perempuan"}>Perempuan</option>
+                    <option selected></option>
+
                                             </select>
+
                                         </div>
                                         {
                                             validation.gender &&
@@ -105,7 +107,7 @@ function SantriCreate() {
                                                     {validation.gender}
                                                 </div>
                                         }
-    
+
                                         <div className="form-group mb-3">
                                             <label className="form-label fw-bold">Status</label>
                                             <textarea className="form-control" rows={3} value={status} onChange={(e) => setStatus(e.target.value)} placeholder="Masukkan Status" />
@@ -116,7 +118,7 @@ function SantriCreate() {
                                                     {validation.status}
                                                 </div>
                                         }
-    
+
                                         <div className="form-group mb-3">
                                             <label className="form-label fw-bold">ROOM</label>
                                             <textarea className="form-control" rows={3} value={room} onChange={(e) => setRoom(e.target.value)} placeholder="Masukkan Room" />
@@ -127,7 +129,7 @@ function SantriCreate() {
                                                     {validation.room}
                                                 </div>
                                         }
-    
+
                                         <div className="form-group mb-3">
                                             <label className="form-label fw-bold">DIVISION</label>
                                             <textarea className="form-control" rows={3} value={division} onChange={(e) => setDivision(e.target.value)} placeholder="Masukkan Division" />
@@ -138,7 +140,7 @@ function SantriCreate() {
                                                     {validation.division}
                                                 </div>
                                         }
-    
+
                                         <button className="btn btn-primary border-0 text-white btn-success shadow-sm" type="submit">
                                             Simpan
                                         </button>
@@ -149,6 +151,7 @@ function SantriCreate() {
                     </div>
                 </div>
             // {/* </Layout> */}
+
       );
     };
 export default SantriCreate;
