@@ -11,12 +11,31 @@ import {
   faMosque
 } from "@fortawesome/free-solid-svg-icons";
 export default function SideBarKiri() {
+	const logoutHandler = async () => {
+
+        //set axios header dengan type Authorization + Bearer token
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+        //fetch Rest API
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/logout`)
+        .then(() => {
+
+            //remove token from cookies
+            Cookies.remove("token");
+
+            //redirect halaman login
+            Router.push('/login');
+        });
+    };
+
+
+
+
   return (
 		<div className="sidebar position-sticky top-0 start-0 bottom-0 overflow-hidden">
 			<div className="logo">
         <Link
           // ngelink landing page maybe
-					href="/"
+					href="/dashboard"
 					className="text-decoration-none fs-5 d-flex align-items-center gap-3 logo1"
 				>
 					<div>
@@ -25,7 +44,7 @@ export default function SideBarKiri() {
 							className="sidebar-icon"
 						/>
 					</div>
-					<span className="overflow-hidden text-uppercase">Santrify</span>
+					<span className="overflow-hidden ">Santrify</span>
 				</Link>
 			</div>
 
@@ -125,7 +144,7 @@ export default function SideBarKiri() {
 								className="sidebar-icon"
 							/>
 						</div>
-						<span className="overflow-hidden">LogOut</span>
+						<span className="overflow-hidden">Logout</span>
 					</a>
 				</li>
 			</ul>

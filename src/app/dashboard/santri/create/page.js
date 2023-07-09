@@ -35,7 +35,6 @@ function SantriCreate() {
 
             //set state "image" to null
             setGambar('');
-
             return
         }
 

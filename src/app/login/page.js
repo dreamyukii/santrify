@@ -1,12 +1,49 @@
-import "bootstrap/dist/css/bootstrap.css";
+'use client';
 import "./login.css";
-export default function Login() {
+import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
+import axios from "axios";
+import Cookies from "js-cookie";
+
+export default function LoginPage() {
+    // const router = useRouter();
+    // // define state
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
+  
+    // // define state validation
+    // const [validation, setValidation] = useState([]);
+  
+    // const loginHandler = async (e) => {
+    //   e.preventDefault();
+    //   // init formdata
+    //   const formData = new FormData();
+    //   // formdata
+    //   formData.append("email", email);
+    //   formData.append("password", password);
+    //   // send data to server
+    //   await axios
+    //     .post("http://localhost:8000/api/login", formData)
+    //     .then((response) => {
+    //       Cookies.set("token", response.data.token);
+    //       router.push("/dashboard");
+    //     })
+    //     .catch((error) => {
+    //       setValidation(error.response.data);
+    //     });
+    // };
+  
+    // useEffect(() => {
+    //   if (Cookies.get("token")) {
+    //     router.push("/dashboard");
+    //   }
+    // });
+
   return (
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
         <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image">
           {/* carousel */}
-      
         </div>
         <div className="col-md-8 col-lg-6">
           <div className="login d-flex align-items-center ">
@@ -17,8 +54,8 @@ export default function Login() {
                     <h1 className="login-heading mb-0 ">Login</h1>
                     <p className="small ">Enter Your Details to Continue</p>
                   </div>
-                  <form>
-                    <div className="form-floating ">
+                  {/* <form onSubmit={loginHandler}>
+                    <div className="form-floating">
                       <input
                         type="email"
                         className="form-control"
@@ -60,13 +97,38 @@ export default function Login() {
                     </div>
 
                     <div className="d-grid mt-4">
-                      <a href="../index.html">
-                        <button className="btn btn-success text-center align-items-center ">
+                        <button type="submit"className="btn btn-success text-center align-items-center ">
                           Login
                         </button>
-                      </a>
                     </div>
-                  </form>
+                  </form> */}
+                  <form onSubmit={loginHandler}>
+                                    <div className="mb-3">
+                                        <label className="form-label">ALAMAT EMAIL</label>
+                                        <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukkan Alamat Email"/>
+                                    </div>
+                                    {
+                                        validation.email && (
+                                            <div className="alert alert-danger">
+                                                {validation.email[0]}
+                                            </div>
+                                        )
+                                    }
+                                    <div className="mb-3">
+                                        <label className="form-label">PASSWORD</label>
+                                        <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Masukkan Password"/>
+                                    </div>
+                                    {
+                                        validation.password && (
+                                            <div className="alert alert-danger">
+                                                {validation.password[0]}
+                                            </div>
+                                        )
+                                    }
+                                    <div className="d-grid gap-2">
+                                        <button type="submit" className="btn btn-primary">LOGIN</button>
+                                    </div>
+                                </form>
                 </div>
               </div>
             </div>

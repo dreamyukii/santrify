@@ -126,14 +126,17 @@ function Page({ params }) {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">GENDER</label>
-                  <textarea
-                    className="form-control"
+                  <label className="form-label fw-bold">Jenis Kelamin</label>
+                  <select
+                    className="form-select"
                     rows={3}
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                     placeholder="Masukkan Gender"
-                  />
+                  >
+                    <option value={"Laki-Laki"}>Laki-Laki</option>
+                    <option value={"Perempuan"}>Perempuan</option>
+                  </select>
                 </div>
                 {validation.gender && (
                   <div className="alert alert-danger">{validation.gender}</div>

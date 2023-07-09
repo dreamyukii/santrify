@@ -19,6 +19,7 @@
     "chart.js": "^4.3.0",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "js-cookie": "^3.0.5",
     "next": "^13.4.7",
     "npm-check-updates": "^16.10.13",
     "postcss": "8.4.24",
