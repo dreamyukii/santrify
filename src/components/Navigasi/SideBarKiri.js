@@ -7,29 +7,23 @@ import {
   faMoneyBill,
   faArrowRightFromBracket,
   faHistory,
-  faPerson,
+  faUsers,
   faMosque
 } from "@fortawesome/free-solid-svg-icons";
 export default function SideBarKiri() {
-	const logoutHandler = async () => {
 
+	const logoutHandler = async () => {
         //set axios header dengan type Authorization + Bearer token
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
         //fetch Rest API
         await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/logout`)
         .then(() => {
-
             //remove token from cookies
             Cookies.remove("token");
-
             //redirect halaman login
             Router.push('/login');
         });
     };
-
-
-
-
   return (
 		<div className="sidebar position-sticky top-0 start-0 bottom-0 overflow-hidden">
 			<div className="logo">
@@ -70,7 +64,7 @@ export default function SideBarKiri() {
 					>
 						<div>
 							<FontAwesomeIcon
-								icon={faPerson}
+								icon={faUsers}
 								className="sidebar-icon"
 							/>
 						</div>

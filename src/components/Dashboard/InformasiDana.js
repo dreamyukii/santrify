@@ -13,7 +13,7 @@ export default function InformasiDana() {
 							<h5 className="card-text ms-1 fw-bolder">$1000</h5>
 						</div>
 						<div className="col-4">
-							<div className="text-center mt-1 me-2">
+							<div className="text-center mt-3">
 								<FontAwesomeIcon
 									icon={faDollarSign}
 									className="dana-icon"

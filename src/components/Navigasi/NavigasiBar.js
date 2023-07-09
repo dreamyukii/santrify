@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Profil from "../../../public/Profil.png";
 import { usePathname } from "next/navigation";
+import Cookies from "js-cookie";
 export default function NavigasiBar() {
   // Navbar Title
   const navbarName = {

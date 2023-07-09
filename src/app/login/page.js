@@ -1,5 +1,5 @@
 'use client';
-import "./login.css";
+import './login.css'
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import axios from "axios";
@@ -13,7 +13,6 @@ export default function LoginPage() {
   
     // define state validation
     const [validation, setValidation] = useState([]);
-  
     const loginHandler = async (e) => {
       e.preventDefault();
       // init formdata
@@ -32,7 +31,6 @@ export default function LoginPage() {
           setValidation(error.response.data);
         });
     };
-  
     useEffect(() => {
       if (Cookies.get("token")) {
         router.push("/dashboard");
@@ -60,7 +58,8 @@ export default function LoginPage() {
                         type="email"
                         className="form-control"
                         id="floatingInput"
-                        placeholder="Email Address/Username"
+                        placeholder="Username"
+                        value={email} onChange={(e) => setEmail(e.target.value)}
                       />
                       <label for="floatingInput">
                         Email address / Username
@@ -72,6 +71,8 @@ export default function LoginPage() {
                         className="form-control"
                         id="floatingPassword"
                         placeholder="Password"
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                       <label for="floatingPassword">Password</label>
                     </div>

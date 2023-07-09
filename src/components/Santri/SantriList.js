@@ -2,27 +2,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Image from "next/image"
-
-//fetch with "getServerSideProps"
-export async function getServerSideProps() {
-  //http request
-  const req = await axios.get(`http://localhost:8000/api/santri`);
-  const res = req.data.data.data;
-  return res;
-}
 
 export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
-  const router = useRouter();
-
-  const refreshData = () => {
-    if (router?.asPath?.startsWith) {
-      router.replace(router.asPath);
-    }
-  };
-
   const getSantri = async () => {
     try {
       const response = await axios.get(`http://localhost:8000/api/santri`);
@@ -34,6 +16,8 @@ export default function SantriList(props) {
   };
   // Delete santri
   const deleteSantri = async (res) => {
+    let hapusSantri = ("Apakah anda ingin menghapus santri?");
+    if (confirm(hapusSantri)){
       try {
         const response = await axios.delete(
           `http://localhost:8000/api/santri/${res}`
@@ -45,8 +29,8 @@ export default function SantriList(props) {
         // Handle any errors that occur during the request
         console.error(error);
       }
+    }
   };
-
   useEffect(() => {
     getSantri();
   }, []);
@@ -57,30 +41,30 @@ export default function SantriList(props) {
         <table className="table table-hover">
           <thead className="min-w-full divide-y divide-gray-200">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 ID
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 Nama
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 Jenis Kelamin
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 Status
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 Kamar
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 Divisi
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-2">
                 Aksi
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-gray-100">
             {santri.map((post) => (
               <tr key={post.id}>
                 <td>{post.id}</td>

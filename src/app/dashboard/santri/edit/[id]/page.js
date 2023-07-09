@@ -129,15 +129,12 @@ function Page({ params }) {
                   <label className="form-label fw-bold">Jenis Kelamin</label>
                   <select
                     className="form-select"
-                    rows={3}
-                    value={gender}
+                    rows={2}
                     onChange={(e) => setGender(e.target.value)}
                     placeholder="Masukkan Gender"
                   >
-                        <option value={"Laki-Laki"}>Laki-Laki</option>
+                    <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
-                    <option selected></option>
-
                   </select>
                 </div>
                 {validation.gender && (

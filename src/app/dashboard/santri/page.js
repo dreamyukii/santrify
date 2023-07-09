@@ -1,5 +1,5 @@
 import "./santri.css";
-import SantriList from "../../../components/SantriList";
+import SantriList from "../../../components/Santri/SantriList";
 import Link from "next/link";
 export default function santri() {
   return (
@@ -30,9 +30,10 @@ export default function santri() {
               />
             </form>
           </div>
+          <div className="row-5">
+            <SantriList />{" "}
+          </div>
         </div>
-
-        <SantriList />
       </div>
     </>
   );

@@ -11,7 +11,6 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -40,21 +39,18 @@ export const data = {
   datasets: [
     {
       label: "Santri",
-      data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "green",
+      data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
+      backgroundColor: "pink",
     },
     {
       label: "Dana Masuk",
-      data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      borderColor: "rgb(255, 99, 132)",
+      data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
       backgroundColor: "green",
     },
     {
       label: "Dana Keluar",
-      data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "green",
+      data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
+      backgroundColor: "yellow",
     },
   ],
 };
@@ -63,7 +59,7 @@ export default function ChartSantri() {
   return (
     <>
       <div>
-        <Line options={options} data={data} />
+        <Line options={options} data={data}/>
       </div>
     </>
   )
