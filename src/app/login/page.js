@@ -55,7 +55,7 @@ export default function LoginPage() {
                         value={email} onChange={(e) => setEmail(e.target.value)}
                       />
                       <label for="floatingInput">
-                        Email address / Username
+                        Email Address / Username
                       </label>
                     </div>
                     <div className="form-floating mb-3">
@@ -80,7 +80,7 @@ export default function LoginPage() {
                         className="form-check-label"
                         for="rememberPasswordCheck"
                       >
-                        Remember password
+                        Remember Password
                       </label>
                     </div>
                     <div className=" d-block">
