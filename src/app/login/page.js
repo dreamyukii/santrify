@@ -10,7 +10,6 @@ export default function LoginPage() {
     // define state
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-  
     // define state validation
     const [validation, setValidation] = useState([]);
     const loginHandler = async (e) => {
@@ -22,10 +21,9 @@ export default function LoginPage() {
       formData.append("password", password);
       // send data to server
       await axios
-        .post("http://localhost:8000/api/login", formData)
+        .post('http://localhost:8000/api/login',formData)
         .then((response) => {
           Cookies.set("token", response.data.token);
-          router.push("/dashboard");
         })
         .catch((error) => {
           setValidation(error.response.data);

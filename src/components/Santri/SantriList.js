@@ -16,8 +16,8 @@ export default function SantriList(props) {
   };
   // Delete santri
   const deleteSantri = async (res) => {
-    let hapusSantri = ("Apakah anda ingin menghapus santri?");
-    if (confirm(hapusSantri)){
+    let hapusSantri = "Apakah anda ingin menghapus santri?";
+    if (confirm(hapusSantri)) {
       try {
         const response = await axios.delete(
           `http://localhost:8000/api/santri/${res}`
@@ -48,6 +48,9 @@ export default function SantriList(props) {
                 Nama
               </th>
               <th scope="col" className="px-6 py-2">
+                Foto Santri
+              </th>
+              <th scope="col" className="px-6 py-2">
                 Jenis Kelamin
               </th>
               <th scope="col" className="px-6 py-2">
@@ -68,8 +71,14 @@ export default function SantriList(props) {
             {santri.map((post) => (
               <tr key={post.id}>
                 <td>{post.id}</td>
-                <td><img src={`http://localhost:8000/storage/santri/${post.gambar}`} width={200} height={200}/></td>
                 <td>{post.nama}</td>
+                <td>
+                  <img
+                    src={`http://localhost:8000/storage/santri/${post.gambar}`}
+                    width={100}
+                    height={100}
+                  />
+                </td>
                 <td>{post.gender}</td>
                 <td>{post.status}</td>
                 <td>{post.room}</td>

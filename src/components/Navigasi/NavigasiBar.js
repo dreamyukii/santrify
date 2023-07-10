@@ -5,7 +5,7 @@ import Profil from "../../../public/Profil.png";
 import { usePathname, redirect } from "next/navigation";
 import Cookies from "js-cookie";
 export default function NavigasiBar() {
-    // mengambil token
+    // // mengambil token
     const token = Cookies.get("token");
     useEffect(() => {
       if (!token) {
@@ -34,11 +34,11 @@ export default function NavigasiBar() {
       {/* NavBar */}
       <div className="main-content w-100 position-relative">
         <div className="header d-flex justify-content-between align-items-center flex-wrap">
-          <div className="text-center">
+          <div className="text-center mt-2">
             <h2 className="titleNav">{title}</h2>
           </div>
           <div className="d-flex align-items-center gap-3">
-            <Image src={Profil} alt="profile picture" className="" />
+            <Image src={Profil} alt="Profile Picture"/>
           </div>
         </div>
       </div>

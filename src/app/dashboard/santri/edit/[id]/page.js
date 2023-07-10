@@ -28,7 +28,7 @@ function Page({ params }) {
   const getSantriById = async (id) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/santri/${id}`
+        `${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`
       );
       setNama(data.data.nama);
       setGender(data.data.gender);
@@ -44,15 +44,12 @@ function Page({ params }) {
   const handleFileChange = (e) => {
     //define variable for get value image data
     const imageData = e.target.files[0];
-
     //check validation file
     if (!imageData.type.match("image.*")) {
       //set state "image" to null
       setGambar("");
-
       return;
     }
-
     //assign file to state "image"
     setGambar(imageData);
   };
@@ -76,10 +73,9 @@ function Page({ params }) {
 
     //send data to server
     await axios
-      .post(`http://localhost:8000/api/santri/${id}`, formData)
+      .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`, formData)
       .then(() => {
         // debugger;
-
         //redirect
         navigate.push("/dashboard/santri");
       });
@@ -135,6 +131,7 @@ function Page({ params }) {
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
+                    <option selected>Pilih</option>
                   </select>
                 </div>
                 {validation.gender && (

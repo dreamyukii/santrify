@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,18 +11,23 @@ import {
   faUsers,
   faMosque
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 export default function SideBarKiri() {
-
+	const router = useRouter();
+	const token = Cookies.get('token');
 	const logoutHandler = async () => {
         //set axios header dengan type Authorization + Bearer token
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
         //fetch Rest API
-        await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/logout`)
+        await axios.post(`http://localhost:8000/api/logout`)
         .then(() => {
             //remove token from cookies
             Cookies.remove("token");
             //redirect halaman login
-            Router.push('/login');
+            router.push('/login');
         });
     };
   return (
@@ -33,10 +39,7 @@ export default function SideBarKiri() {
 					className="text-decoration-none fs-5 d-flex align-items-center gap-3 logo1"
 				>
 					<div>
-						<FontAwesomeIcon
-							icon={faMosque}
-							className="sidebar-icon"
-						/>
+						<img src={"/logo.png"}  className="sidebar-icon"/>
 					</div>
 					<span className="overflow-hidden ">Santrify</span>
 				</Link>
@@ -127,10 +130,12 @@ export default function SideBarKiri() {
 						<span className="overflow-hidden">History</span>
 					</Link>
 				</li>
-				<li className="logout position-absolute bottom-0 w-100">
-					<a
-						href="/login"
-						className="text-decoration-none d-flex align-items-center gap-3"
+
+				<li>
+					<Link
+						href=""
+						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
+						onClick={logoutHandler}
 					>
 						<div>
 							<FontAwesomeIcon
@@ -138,9 +143,13 @@ export default function SideBarKiri() {
 								className="sidebar-icon"
 							/>
 						</div>
+						
 						<span className="overflow-hidden">Logout</span>
-					</a>
+					</Link>
 				</li>
+
+
+				
 			</ul>
 		</div>
   );

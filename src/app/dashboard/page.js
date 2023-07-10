@@ -4,9 +4,6 @@ import JumlahSantri from "../../components/Dashboard/JumlahSantri";
 import KamarKosong from "../../components/Dashboard/KamarKosong";
 import InformasiDana from "../../components/Dashboard/InformasiDana";
 import ChartSantri from "../../components/Dashboard/ChartSantri";
-import Cookies from "js-cookie";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
 export default function Page() {
 
   return (

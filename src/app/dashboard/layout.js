@@ -6,16 +6,19 @@ export const metadata = {
   title: "Santrify",
   description: "Dashboard for Islamic Boarding School",
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link rel="icon" href="/logo.png" sizes="any" />
+      </head>
       <body>
         <div className="sidebarLayout">
           <SideBarKiri />
           <div style={{ width: "100%" }}>
             <NavigasiBar />
-            <div style={{padding:10}}> {children}</div>
+            <div style={{ padding: 10 }}> {children}</div>
           </div>
         </div>
       </body>
