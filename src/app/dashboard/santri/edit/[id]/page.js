@@ -28,7 +28,7 @@ function Page({ params }) {
   const getSantriById = async (id) => {
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`
+        `http://localhost:8000/api/santri/${id}`
       );
       setNama(data.data.nama);
       setGender(data.data.gender);
@@ -79,11 +79,6 @@ function Page({ params }) {
         //redirect
         navigate.push("/dashboard/santri");
       });
-    // .catch((error) => {
-
-    //     //assign validation on state
-    //     setValidation(error.response.data);
-    // })
   };
 
   useEffect(() => {

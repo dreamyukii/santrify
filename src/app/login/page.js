@@ -1,6 +1,6 @@
 'use client';
-import './login.css'
-import { useState, useEffect } from "react";
+import './login.css';
+import { useState} from "react";
 import { useRouter } from 'next/navigation';
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -24,17 +24,12 @@ export default function LoginPage() {
         .post('http://localhost:8000/api/login',formData)
         .then((response) => {
           Cookies.set("token", response.data.token);
+          router.push("/dashboard");
         })
         .catch((error) => {
           setValidation(error.response.data);
         });
     };
-    useEffect(() => {
-      if (Cookies.get("token")) {
-        router.push("/dashboard");
-      }
-    });
-
   return (
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
@@ -74,7 +69,6 @@ export default function LoginPage() {
                       />
                       <label for="floatingPassword">Password</label>
                     </div>
-
                     <div className="form-check mb-3">
                       <input
                         className="form-check-input"
