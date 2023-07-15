@@ -54,8 +54,8 @@ export default function loginPage() {
                         placeholder="Username"
                         value={email} onChange={(e) => setEmail(e.target.value)}
                       />
-                      <label htmlFor="floatingInput">
-                        Email address
+                      <label for="floatingInput">
+                        Email Address / Username
                       </label>
                     </div>
                     <div className="form-floating mb-3">
