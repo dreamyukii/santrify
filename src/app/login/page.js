@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function LoginPage() {
+export default function loginPage() {
     const router = useRouter();
     // define state
     const [email, setEmail] = useState("");
@@ -54,8 +54,8 @@ export default function LoginPage() {
                         placeholder="Username"
                         value={email} onChange={(e) => setEmail(e.target.value)}
                       />
-                      <label for="floatingInput">
-                        Email address / Username
+                      <label htmlFor="floatingInput">
+                        Email address
                       </label>
                     </div>
                     <div className="form-floating mb-3">
@@ -67,7 +67,7 @@ export default function LoginPage() {
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)}
                       />
-                      <label for="floatingPassword">Password</label>
+                      <label htmlFor="floatingPassword">Password</label>
                     </div>
                     <div className="form-check mb-3">
                       <input
@@ -78,7 +78,7 @@ export default function LoginPage() {
                       />
                       <label
                         className="form-check-label"
-                        for="rememberPasswordCheck"
+                        htmlFor="rememberPasswordCheck"
                       >
                         Remember password
                       </label>

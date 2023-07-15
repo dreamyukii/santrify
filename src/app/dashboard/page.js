@@ -5,8 +5,7 @@ import KamarKosong from "../../components/Dashboard/KamarKosong";
 import InformasiDana from "../../components/Dashboard/InformasiDana";
 import ChartSantri from "../../components/Dashboard/ChartSantri";
 export default function Page() {
-
-  return (
+return (
     <>
       <div>
         <div className="container">

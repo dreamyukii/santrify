@@ -6,7 +6,6 @@ export const metadata = {
   title: "Santrify",
   description: "Dashboard for Islamic Boarding School",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
