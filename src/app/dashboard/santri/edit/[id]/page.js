@@ -28,7 +28,7 @@ function Page({ params }) {
   const getSantriById = async (id) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/santri/${id}`
+        `${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`
       );
       setNama(data.data.nama);
       setGender(data.data.gender);
@@ -75,7 +75,6 @@ function Page({ params }) {
     await axios
       .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${id}`, formData)
       .then(() => {
-        // debugger;
         //redirect
         navigate.push("/dashboard/santri");
       });

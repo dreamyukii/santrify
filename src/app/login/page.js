@@ -21,7 +21,7 @@ export default function loginPage() {
       formData.append("password", password);
       // send data to server
       await axios
-        .post('http://localhost:8000/api/login',formData)
+        .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/login`,formData)
         .then((response) => {
           Cookies.set("token", response.data.token);
           router.push("/dashboard");
@@ -95,7 +95,6 @@ export default function loginPage() {
                         </button>
                     </div>
                   </form>
-                  
                 </div>
               </div>
             </div>

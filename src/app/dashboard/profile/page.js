@@ -1,8 +1,26 @@
 "use client";
 import Image from "next/image";
+
 import Profil from "../../../../public/Profil.png";
 import "./profile.css";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { redirect } from "next/navigation";
 export default function Profile() {
+   const token = Cookies.get('token');
+   const [user,setUser] = useState({});
+   const fetchData = async () =>{
+        // using bearer for auth
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+        await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/user`)
+        .then((response)=>{
+          setUser(response.data);
+        })
+   }
+   useEffect(()=>{
+    fetchData();
+   },[])
   return (
     <>
       <div className="container">
@@ -18,8 +36,8 @@ export default function Profile() {
               />
             </div>
             <div className="text-center">
-              <span>Primasbt</span> <br />
-              <span className="fw-bold">Primasbt@godean.com</span>
+              <span>{user.name}</span> <br />
+              <span>{user.email}</span>
             </div>
           </div>
           <div class="col-md-6 px-5">

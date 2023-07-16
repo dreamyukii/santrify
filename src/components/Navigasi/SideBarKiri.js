@@ -22,7 +22,7 @@ export default function SideBarKiri() {
         //set axios header dengan type Authorization + Bearer token
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
         //fetch Rest API
-        await axios.post(`http://localhost:8000/api/logout`)
+        await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/logout`)
         .then(() => {
             //remove token from cookies
             Cookies.remove("token");

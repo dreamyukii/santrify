@@ -1,7 +1,7 @@
 "use client";
 import "./register.css";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { redirect} from "next/navigation";
 import { useState } from "react";
 
 export default function registerPage() {
@@ -16,8 +16,6 @@ const [validation, setValidation] = useState([]);
 // register function
 const registerHandler = async(e)=>{
     e.preventDefault();
-    // routing
-    const router = useRouter();
     // formData init
     const formData = new FormData();
 
@@ -28,9 +26,9 @@ const registerHandler = async(e)=>{
     formData.append('password_confirmation',passwordConfirm);
 
     // fetch data to api
-    await axios.post('http://localhost:8000/api/register',formData)
+    await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/register`,formData)
     .then(()=>{
-        router.push("/login")
+        redirect.push("/login")
     }).catch((error)=>{
         setValidation(error.response.data);
     })

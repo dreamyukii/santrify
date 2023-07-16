@@ -55,7 +55,7 @@ function SantriCreate() {
     formData.append("division", division);
 
     // Send data to the server
-    await axios.post(`http://localhost:8000/api/santri`, formData);
+    await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`, formData);
 
     // Redirect to '/santri'
     router.push("/dashboard/santri");

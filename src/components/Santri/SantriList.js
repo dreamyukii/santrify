@@ -7,7 +7,7 @@ export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
   const getSantri = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/santri`);
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
       setSantri(response.data.data.data);
       console.log(response.data.data.data);
     } catch (error) {
@@ -74,7 +74,7 @@ export default function SantriList(props) {
                 <td>{post.nama}</td>
                 <td>
                   <img
-                    src={`http://localhost:8000/storage/santri/${post.gambar}`}
+                    src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/santri/${post.gambar}`}
                     width={100}
                     height={100}
                   />
