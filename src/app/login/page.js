@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function loginPage() {
+export default function LoginPage() {
     const router = useRouter();
     // define state
     const [email, setEmail] = useState("");
