@@ -6,7 +6,6 @@ import "./profile.css";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { redirect } from "next/navigation";
 export default function Profile() {
    const token = Cookies.get('token');
    const [user,setUser] = useState({});

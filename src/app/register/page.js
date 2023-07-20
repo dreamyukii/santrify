@@ -18,17 +18,15 @@ const registerHandler = async(e)=>{
     e.preventDefault();
     // formData init
     const formData = new FormData();
-
     // append data to formdata
     formData.append('name',name);
     formData.append('email',email);
     formData.append('password',password);
     formData.append('password_confirmation',passwordConfirm);
-
     // fetch data to api
     await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/register`,formData)
     .then(()=>{
-        redirect.push("/login")
+        redirect.push("/login");
     }).catch((error)=>{
         setValidation(error.response.data);
     })
