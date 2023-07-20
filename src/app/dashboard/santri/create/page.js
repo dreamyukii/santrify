@@ -13,7 +13,7 @@ function SantriCreate() {
   const [gender, setGender] = useState("");
   const [room, setRoom] = useState("");
   const [status, setStatus] = useState("");
-  const [division, setDivision] = useState("");
+  const [divisi, setdivisi] = useState("");
 
   const router = useRouter();
 
@@ -52,10 +52,10 @@ function SantriCreate() {
     formData.append("gender", gender);
     formData.append("room", room);
     formData.append("status", status);
-    formData.append("division", division);
+    formData.append("divisi", divisi);
 
     // Send data to the server
-    await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`, formData);
+    await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}`, formData);
 
     // Redirect to '/santri'
     router.push("/dashboard/santri");
@@ -92,10 +92,11 @@ function SantriCreate() {
                     className="form-select"
                     onChange={(e) => setGender(e.target.value)}
                     placeholder="Masukkan Gender"
+                    defaultValue={"Pilih"}
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
-                    <option selected>Pilih</option>
+                    <option >Pilih</option>
                   </select>
                 </div>
                 {validation.gender && (
@@ -135,14 +136,14 @@ function SantriCreate() {
                   <textarea
                     className="form-control"
                     rows={3}
-                    value={division}
-                    onChange={(e) => setDivision(e.target.value)}
-                    placeholder="Masukkan Division"
+                    value={divisi}
+                    onChange={(e) => setdivisi(e.target.value)}
+                    placeholder="Masukkan divisi"
                   />
                 </div>
-                {validation.division && (
+                {validation.divisi && (
                   <div className="alert alert-danger">
-                    {validation.division}
+                    {validation.divisi}
                   </div>
                 )}
                 <div className="form-group mb-3">

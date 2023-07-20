@@ -20,7 +20,7 @@ export default function SantriList(props) {
     if (confirm(hapusSantri)) {
       try {
         const response = await axios.delete(
-          `${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/{$res}`
+          `${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${res}`
         );
         getSantri();
         // Handle the response after deleting the item
@@ -81,8 +81,8 @@ export default function SantriList(props) {
                 </td>
                 <td>{post.gender}</td>
                 <td>{post.status}</td>
-                <td>{post.room}</td>
-                <td>{post.division}</td>
+                <td>{post.kamar.nama_kamar}</td>
+                <td>{post.divisi.nama_divisi}</td>
                 <td className="text-center">
                   {/* edit santri */}
                   <Link href={`/dashboard/santri/edit/${post.id}`}>
