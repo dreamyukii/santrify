@@ -1,11 +1,12 @@
 "use client";
 import "./register.css";
 import axios from "axios";
-import { redirect} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function registerPage() {
   // set form register
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +17,8 @@ const [validation, setValidation] = useState([]);
 // register function
 const registerHandler = async(e)=>{
     e.preventDefault();
+    // routing
+    
     // formData init
     const formData = new FormData();
 
@@ -28,7 +31,7 @@ const registerHandler = async(e)=>{
     // fetch data to api
     await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/register`,formData)
     .then(()=>{
-        redirect.push("/login")
+        router.push("/login")
     }).catch((error)=>{
         setValidation(error.response.data);
     })

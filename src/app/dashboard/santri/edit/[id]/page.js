@@ -19,7 +19,7 @@ function Page({ params }) {
   const [gender, setGender] = useState(santri.gender);
   const [room, setRoom] = useState(santri.room);
   const [status, setStatus] = useState(santri.status);
-  const [division, setDivision] = useState(santri.division);
+  const [divisi, setdivisi] = useState(santri.divisi);
   const navigate = useRouter();
 
   //state validation
@@ -34,7 +34,7 @@ function Page({ params }) {
       setGender(data.data.gender);
       setRoom(data.data.room);
       setStatus(data.data.status);
-      setDivision(data.data.division);
+      setdivisi(data.data.divisi);
     } catch (error) {
       console.log(error.message);
     }
@@ -67,7 +67,7 @@ function Page({ params }) {
     formData.append("gender", gender);
     formData.append("status", status);
     formData.append("room", room);
-    formData.append("division", division);
+    formData.append("divisi", divisi);
     formData.append("_method", "PUT");
     // debugger;
 
@@ -161,18 +161,18 @@ function Page({ params }) {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">DIVISION</label>
+                  <label className="form-label fw-bold">divisi</label>
                   <textarea
                     className="form-control"
                     rows={3}
-                    value={division}
-                    onChange={(e) => setDivision(e.target.value)}
-                    placeholder="Masukkan Division"
+                    value={divisi}
+                    onChange={(e) => setdivisi(e.target.value)}
+                    placeholder="Masukkan divisi"
                   />
                 </div>
-                {validation.division && (
+                {validation.divisi && (
                   <div className="alert alert-danger">
-                    {validation.division}
+                    {validation.divisi}
                   </div>
                 )}
 
