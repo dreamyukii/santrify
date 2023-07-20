@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Image from "next/image";
+import Cookies from "js-cookie";
 export default function SantriList(props) {
+  // const token = Cookies.get('token');
   const [santri, setSantri] = useState([]);
   const getSantri = async () => {
     try {
       const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
       setSantri(response.data.data.data);
-      console.log(response.data.data.data);
     } catch (error) {
       console.log(error.messsage);
     }
@@ -63,7 +63,7 @@ export default function SantriList(props) {
                 Divisi
               </th>
               <th scope="col" className="px-6 py-2">
-                Aksi
+                
               </th>
             </tr>
           </thead>

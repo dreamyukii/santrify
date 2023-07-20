@@ -14,7 +14,6 @@ import {
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 export default function SideBarKiri() {
 	const router = useRouter();
 	const token = Cookies.get('token');
