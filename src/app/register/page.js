@@ -4,7 +4,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function RegisterPage() {
+export default function register() {
   // set form register
   const router = useRouter();
   const [name, setName] = useState("");
