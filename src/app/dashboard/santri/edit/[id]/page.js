@@ -147,7 +147,7 @@ function Page({ params }) {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">ROOM</label>
+                  <label className="form-label fw-bold">Kamar</label>
                   <select
                     className="form-select"
                     onChange={(e) => setRoom(e.target.value)}
@@ -167,7 +167,7 @@ function Page({ params }) {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">divisi</label>
+                  <label className="form-label fw-bold">Divisi</label>
                   <select
                     className="form-select"
                     onChange={(e) => setdivisi(e.target.value)}
