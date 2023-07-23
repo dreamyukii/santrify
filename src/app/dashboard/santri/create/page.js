@@ -119,13 +119,19 @@ function SantriCreate() {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Kamar</label>
-                  <textarea
-                    className="form-control"
-                    rows={3}
-                    value={room}
+                  <select
+                    className="form-select"
                     onChange={(e) => setRoom(e.target.value)}
-                    placeholder="Masukkan Room"
-                  />
+                    placeholder="Pilih Kamar"
+                    defaultValue={"Pilih"}
+                  >
+                    <option value={"1"}>1</option>
+                    <option value={"2"}>2</option>
+                    <option value={"3"}>3</option>
+                    <option value={"4"}>4</option>
+                    <option value={"5"}>5</option>
+                    <option value={""}>Pilih</option>
+                  </select>
                 </div>
                 {validation.room && (
                   <div className="alert alert-danger">{validation.room}</div>
@@ -133,13 +139,19 @@ function SantriCreate() {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Divisi</label>
-                  <textarea
-                    className="form-control"
-                    rows={3}
-                    value={divisi}
-                    onChange={(e) => setDivisi(e.target.value)}
-                    placeholder="Masukkan Division"
-                  />
+                  <select
+                    className="form-select"
+                    onChange={(e) => setRoom(e.target.value)}
+                    placeholder="Pilih Divisi"
+                    defaultValue={"Pilih"}
+                  >
+                    <option value={"1"}>1</option>
+                    <option value={"2"}>2</option>
+                    <option value={"3"}>3</option>
+                    <option value={"4"}>4</option>
+                    <option value={"5"}>5</option>
+                    <option value={""}>Pilih</option>
+                  </select>
                 </div>
                 {validation.divisi && (
                   <div className="alert alert-danger">

@@ -6,12 +6,12 @@ import { usePathname, redirect } from "next/navigation";
 import Cookies from "js-cookie";
 export default function NavigasiBar() {
     // // mengambil token
-  // const token = Cookies.get("token");
-  // useEffect(() => {
-  //   if (!token) {
-  //     redirect("/login");
-  //   }
-  // });
+  const token = Cookies.get("token");
+  useEffect(() => {
+    if (!token) {
+      redirect("/login");
+    }
+  });
   // Navbar Title
   const navbarName = {
     "/dashboard": "Dashboard",
