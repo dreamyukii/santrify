@@ -148,13 +148,19 @@ function Page({ params }) {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">ROOM</label>
-                  <textarea
-                    className="form-control"
-                    rows={3}
-                    value={room}
+                  <select
+                    className="form-select"
                     onChange={(e) => setRoom(e.target.value)}
-                    placeholder="Masukkan Room"
-                  />
+                    placeholder="Pilih Kamar"
+                    defaultValue={"Pilih"}
+                  >
+                    <option value={"1"}>1</option>
+                    <option value={"2"}>2</option>
+                    <option value={"3"}>3</option>
+                    <option value={"4"}>4</option>
+                    <option value={"5"}>5</option>
+                    <option value={""}>Pilih</option>
+                  </select>
                 </div>
                 {validation.room && (
                   <div className="alert alert-danger">{validation.room}</div>
@@ -162,13 +168,19 @@ function Page({ params }) {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">divisi</label>
-                  <textarea
-                    className="form-control"
-                    rows={3}
-                    value={divisi}
+                  <select
+                    className="form-select"
                     onChange={(e) => setdivisi(e.target.value)}
-                    placeholder="Masukkan divisi"
-                  />
+                    placeholder="Pilih Divisi"
+                    defaultValue={"Pilih"}
+                  >
+                    <option value={"1"}>1</option>
+                    <option value={"2"}>2</option>
+                    <option value={"3"}>3</option>
+                    <option value={"4"}>4</option>
+                    <option value={"5"}>5</option>
+                    <option value={""}>Pilih</option>
+                  </select>
                 </div>
                 {validation.divisi && (
                   <div className="alert alert-danger">

@@ -141,7 +141,7 @@ function SantriCreate() {
                   <label className="form-label fw-bold">Divisi</label>
                   <select
                     className="form-select"
-                    onChange={(e) => setRoom(e.target.value)}
+                    onChange={(e) => setDivisi(e.target.value)}
                     placeholder="Pilih Divisi"
                     defaultValue={"Pilih"}
                   >
