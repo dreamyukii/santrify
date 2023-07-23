@@ -13,7 +13,7 @@ function SantriCreate() {
   const [gender, setGender] = useState("");
   const [room, setRoom] = useState("");
   const [status, setStatus] = useState("");
-  const [divisi, setdivisi] = useState("");
+  const [divisi, setDivisi] = useState("");
 
   const router = useRouter();
 
@@ -55,7 +55,7 @@ function SantriCreate() {
     formData.append("divisi", divisi);
 
     // Send data to the server
-    await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}`, formData);
+    await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`, formData);
 
     // Redirect to '/santri'
     router.push("/dashboard/santri");
@@ -96,7 +96,7 @@ function SantriCreate() {
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
-                    <option >Pilih</option>
+                    <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>
                 {validation.gender && (
@@ -137,8 +137,8 @@ function SantriCreate() {
                     className="form-control"
                     rows={3}
                     value={divisi}
-                    onChange={(e) => setdivisi(e.target.value)}
-                    placeholder="Masukkan divisi"
+                    onChange={(e) => setDivisi(e.target.value)}
+                    placeholder="Masukkan Division"
                   />
                 </div>
                 {validation.divisi && (
