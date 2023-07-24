@@ -5,9 +5,9 @@ import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
- const getToken = async ()=>{
-    await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/sanctum/csrf-cookie`);
- }
+//  const getToken = async ()=>{
+//     await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/sanctum/csrf-cookie`);
+//  }
 function SantriCreate() {
   //state
   const [gambar, setGambar] = useState("");
@@ -44,7 +44,7 @@ function SantriCreate() {
   //method "storePost"
   const storePost = async (e) => {
     e.preventDefault();
-    await getToken();
+    // await getToken();
     // Define formData
     const formData = new FormData();
 
