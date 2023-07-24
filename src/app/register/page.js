@@ -29,7 +29,7 @@ const registerHandler = async(e)=>{
     // fetch data to api
     await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/register`,formData)
     .then(()=>{
-      router.push("/dashboard");
+      router.push("/login");
     }).catch((error)=>{
         setValidation(error.response.data);
     })

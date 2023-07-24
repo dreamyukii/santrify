@@ -5,8 +5,11 @@ import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-
+ const getToken = async ()=>{
+      await axios.get("/sanctum/csrf-cookie");
+ }
 function SantriCreate() {
+
   //state
   const [gambar, setGambar] = useState("");
   const [nama, setNama] = useState("");
@@ -42,7 +45,7 @@ function SantriCreate() {
   //method "storePost"
   const storePost = async (e) => {
     e.preventDefault();
-
+    await getToken();
     // Define formData
     const formData = new FormData();
 
@@ -60,10 +63,10 @@ function SantriCreate() {
     // Redirect to '/santri'
     router.push("/dashboard/santri");
   };
-
   useEffect(() => {
-    // Code to run on component mount
   }, []);
+
+
   console.log(gender);
   return (
     <div className="container">
