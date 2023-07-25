@@ -2,9 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Cookies from "js-cookie";
 export default function SantriList(props) {
-  // const token = Cookies.get('token');
   const [santri, setSantri] = useState([]);
   const getSantri = async () => {
     try {
@@ -62,8 +60,7 @@ export default function SantriList(props) {
               <th scope="col" className="px-6 py-2">
                 Divisi
               </th>
-              <th scope="col" className="px-6 py-2">
-                
+              <th scope="col" className="px-6 py-2">  
               </th>
             </tr>
           </thead>
