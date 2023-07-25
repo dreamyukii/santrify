@@ -159,7 +159,7 @@ function Page({ params }) {
                     <option value={"3"}>3</option>
                     <option value={"4"}>4</option>
                     <option value={"5"}>5</option>
-                    <option value={""}>Pilih</option>
+                    <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>
                 {validation.room && (
@@ -179,7 +179,7 @@ function Page({ params }) {
                     <option value={"3"}>3</option>
                     <option value={"4"}>4</option>
                     <option value={"5"}>5</option>
-                    <option value={""}>Pilih</option>
+                    <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>
                 {validation.divisi && (
