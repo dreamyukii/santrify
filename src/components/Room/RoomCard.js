@@ -54,11 +54,11 @@ export default function RoomCard() {
               </div>
               <div className="card-body">
                 <div className="row">
-                  <div className="col-8 ">
+                  <div className="col-8">
                     <p className="card-title">{post.id_room}</p>
                   </div>
                   <div className="col-2">
-                  <Link href={`/dashboard/kamar/edit/${post.id}`}>
+                  <Link href={`/dashboard/room/edit/${post.id}`}>
                     <button type="button" className="btn-circle">
                       <MdKeyboardArrowRight
                         style={{ fontSize: "5pt" }}

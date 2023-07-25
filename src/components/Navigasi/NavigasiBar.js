@@ -21,7 +21,6 @@ export default function NavigasiBar() {
     "/dashboard/room": "Room",
     "/dashboard/bill": "Bill",
     "/dashboard/profile": "Profile",
-    "/dashboard/history": "History",
   };
   const [title, setTitle] = useState("");
   const pathname = usePathname();

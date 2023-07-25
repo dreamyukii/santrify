@@ -10,7 +10,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,8 +19,24 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+import { useEffect, useState } from "react";
+import axios from "axios";
+export default function ChartSantri() {
+  const [santri, setSantri] = useState([]);
+const getSantri = async () => {
+  try {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
+    setSantri(response.data.data.data);
+  } catch (error) {
+    console.log(error.messsage);
+  }
+};
+useEffect(() => {
+  getSantri();
+}, []);
 
-export const options = {
+ const options = {
+  type: 'doughnut',
   responsive: true,
   plugins: {
     legend: {
@@ -33,33 +48,10 @@ export const options = {
     },
   },
 };
-const labels = ["January", "February", "March", "April", "May"];
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Santri",
-      data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
-      backgroundColor: "pink",
-    },
-    {
-      label: "Dana Masuk",
-      data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
-      backgroundColor: "green",
-    },
-    {
-      label: "Dana Keluar",
-      data: labels.map(() => faker.number.int({ min: 0, max: 100 })),
-      backgroundColor: "yellow",
-    },
-  ],
-};
-
-export default function ChartSantri() {
   return (
     <>
       <div>
-        <Line options={options} data={data}/>
+        
       </div>
     </>
   )

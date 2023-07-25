@@ -117,21 +117,6 @@ export default function SideBarKiri() {
 				</li>
 				<li>
 					<Link
-						href="/dashboard/history"
-						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
-					>
-						<div>
-							<FontAwesomeIcon
-								icon={faHistory}
-								className="sidebar-icon"
-							/>
-						</div>
-						<span className="overflow-hidden">History</span>
-					</Link>
-				</li>
-
-				<li>
-					<Link
 						href=""
 						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
 						onClick={logoutHandler}
