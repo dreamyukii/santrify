@@ -18,6 +18,10 @@
 	background-position: center;
 }
 
+.bg-color {
+	background-color:#f9e6da;
+}
+
 .header h1 {
 	font-weight: 700;
 	font-style: normal;

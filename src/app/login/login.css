@@ -39,6 +39,10 @@
 	color: rgba(129, 129, 129, 0.5);
 }
 
+.bg-color {
+	background-color:#f9e6da;
+}
+
 .btn,
 .form-control {
 	width: 100%;
