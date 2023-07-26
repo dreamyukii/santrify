@@ -3,6 +3,9 @@ import "./register.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
+import bg1 from "../../../public/santri.png";
+import bg2 from "../../../public/Masjid.png";
 
 export default function register() {
   // set form register
@@ -38,8 +41,29 @@ const registerHandler = async(e)=>{
   return (
     <div className="container-fluid ps-md-0">
       <div className="row g-0">
-        <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image">
+        <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image bg-color">
           {/* carousel */}
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossOrigin="anonymous"></link>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossOrigin="anonymous"></script>
+          <div id="carousel" className="carousel slide my-auto mx-auto img-fluid" data-bs-ride="carousel" data-bs-animation="{10}">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <Image 
+                src={bg1}
+                className="d-block w-100 h-100 bg-image" 
+                alt="bg1"
+                priority
+                />
+              </div>
+              <div className="carousel-item">
+                <Image 
+                src={bg2}
+                className="d-block w-100 h-100 bg-image" 
+                alt="bg2"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="col-md-8 col-lg-6">
           <div className="login d-flex align-items-center ">
@@ -47,7 +71,7 @@ const registerHandler = async(e)=>{
               <div className="row">
                 <div className="col-md-9 col-lg-8 mx-auto">
                   <div className="header text-center">
-                    <h1 className="login-heading mb-0 ">Login</h1>
+                    <h1 className="login-heading mb-0 ">Register</h1>
                     <p className="small ">Enter Your Details to Continue</p>
                   </div>
                   <form onSubmit={registerHandler}>
