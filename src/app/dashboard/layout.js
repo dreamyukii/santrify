@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
       <body>
         <div className="sidebarLayout">
           <SideBarKiri />
-          <div style={{ width: "100%" }}>
+          <div style={{ width: "93%" }}>
             <NavigasiBar />
-            <div style={{ padding: 10 }}> {children}</div>
+            <div> {children}</div>
           </div>
         </div>
       </body>

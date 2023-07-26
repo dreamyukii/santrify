@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
-function Page({ params }) {
-
+function CreateRoom({ params }) {
   //state
-  const id = params.id;
   const [kamar, setKamar] = useState({});
   const [gambar, setGambar] = useState("");
   const [nama_kamar, setNamaKamar] = useState(kamar.nama_kamar);
@@ -15,18 +13,6 @@ function Page({ params }) {
 
   //state validation
   const [validation, setValidation] = useState({});
-
-  const getKamarById = async (id) => {
-    try {
-      const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/${id}`
-      );
-      setNamaKamar(data.data.nama_kamar);
-      setStatus(data.data.status);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
 
   //function "handleFileChange"
   const handleFileChange = (e) => {
@@ -43,7 +29,7 @@ function Page({ params }) {
   };
 
   //method "updatePost"
-  const updatePost = async (e) => {
+  const storePost = async (e) => {
     e.preventDefault();
 
     //define formData
@@ -53,27 +39,25 @@ function Page({ params }) {
     formData.append("nama_kamar", nama_kamar);
     formData.append("status", status);
     formData.append("gambar", gambar);
-    formData.append("_method", "PUT");
-    //send data to server
-    await axios
-      .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/${id}`, formData)
-      .then(() => {
-        navigate.push("/dashboard/room");
-      });
-  };
 
+    //send data to server
+    await axios.post(
+      `${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/`,
+      formData
+    );
+    navigate.push("/dashboard/room");
+  };
   useEffect(() => {
-    getKamarById(id);
   }, []);
 
   return (
-    // <Layout>
+    <>
     <div className="container" style={{ marginTop: "80px" }}>
       <div className="row">
         <div className="col-md-12">
           <div className="card border-0 rounded shadow-sm">
             <div className="card-body">
-              <form onSubmit={updatePost}>
+              <form onSubmit={storePost}>
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Nama Kamar</label>
                   <input
@@ -85,7 +69,9 @@ function Page({ params }) {
                   />
                 </div>
                 {validation.nama_kamar && (
-                  <div className="alert alert-danger">{validation.nama_kamar}</div>
+                  <div className="alert alert-danger">
+                    {validation.nama_kamar}
+                  </div>
                 )}
 
                 <div className="form-group mb-3">
@@ -127,7 +113,9 @@ function Page({ params }) {
         </div>
       </div>
     </div>
+    </>
+   
   );
 }
 
-export default Page;
+export default CreateRoom;

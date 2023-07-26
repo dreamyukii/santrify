@@ -6,7 +6,6 @@
     rgba(255, 255, 255, 0)
   );
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -167,4 +166,3 @@ label {
 .dashboard:hover{
 box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
-

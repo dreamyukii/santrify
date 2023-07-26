@@ -16,7 +16,6 @@ export default function JumlahSantri() {
   useEffect(() => {
     getSantri();
   }, []);
-
   return (
     <>
       <div className="card dashboard">

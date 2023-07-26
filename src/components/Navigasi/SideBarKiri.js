@@ -7,10 +7,10 @@ import {
   faBed,
   faMoneyBill,
   faArrowRightFromBracket,
-  faHistory,
   faUsers,
-  faMosque
+
 } from "@fortawesome/free-solid-svg-icons";
+import { SiGoogleclassroom } from "react-icons/si";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -85,6 +85,17 @@ export default function SideBarKiri() {
 							/>
 						</div>
 						<span className="overflow-hidden">Room</span>
+					</Link>
+				</li>
+				<li>
+					<Link
+						href="/dashboard/classroom"
+						className="text-decoration-none fs-6 d-flex align-items-center gap-3"
+					>
+						<div>
+						<SiGoogleclassroom className="sidebar-icon"/>
+						</div>
+						<span className="overflow-hidden">Class</span>
 					</Link>
 				</li>
 				<li>

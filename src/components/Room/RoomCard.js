@@ -24,10 +24,7 @@ export default function RoomCard() {
           `${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/${res}`
         );
         getKamar();
-        // Handle the response after deleting the item
-        // console.log(response.data);
       } catch (error) {
-        // Handle any errors that occur during the request
         console.error(error);
       }
     }
@@ -38,10 +35,10 @@ export default function RoomCard() {
 
   return (
     <div className="container d-flex">
-      <div className="row justify-items-center ">
+      <div className="row">
 
           {kamar.map((post) => (
-        <div className="col">
+        <div className="col m-2">
             <div
               className="card border-none"
               style={{ width: 400, height: 300 }}
@@ -50,12 +47,12 @@ export default function RoomCard() {
                 className="card-header text-bg-success"
                 style={{ height: 120 }}
               >
-                <h1>{post.nama_kamar}</h1>
+                <h1>{post.id}.{post.nama_kamar}</h1>
               </div>
               <div className="card-body">
                 <div className="row">
                   <div className="col-8">
-                    <p className="card-title">{post.id_room}</p>
+                    <p className="card-title">{post.status}</p>
                   </div>
                   <div className="col-2">
                   <Link href={`/dashboard/room/edit/${post.id}`}>

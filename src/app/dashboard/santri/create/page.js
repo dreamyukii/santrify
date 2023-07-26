@@ -1,13 +1,7 @@
 "use client";
-import { useState } from "react";
-
-//import axios
 import axios from "axios";
-import React, { useEffect } from "react";
+import  { useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
-//  const getToken = async ()=>{
-//     await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/sanctum/csrf-cookie`);
-//  }
 function SantriCreate() {
   //state
   const [gambar, setGambar] = useState("");

@@ -1,12 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
-
-//import router
-// import Router from "next/navigation";
 import { useRouter } from "next/navigation";
-
-//import axios
 import axios from "axios";
 
 function Page({ params }) {

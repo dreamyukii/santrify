@@ -20,7 +20,8 @@ export default function NavigasiBar() {
     "/dashboard/santri/edit": "Edit Santri",
     "/dashboard/room": "Room",
     "/dashboard/bill": "Bill",
-    "/dashboard/profile": "Profile",
+    "/dashboard/classroom":"Classroom",
+    "/dashboard/profile": "Profile"
   };
   const [title, setTitle] = useState("");
   const pathname = usePathname();
