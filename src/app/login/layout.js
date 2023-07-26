@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
+import "../../styles/logregister.css";
 export const metadata = {
   title: "Santrify Login",
   description: "Login Page",

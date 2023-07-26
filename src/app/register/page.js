@@ -1,11 +1,11 @@
 "use client";
-import "./register.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 import bg1 from "../../../public/santri.png";
 import bg2 from "../../../public/Masjid.png";
+
 
 export default function register() {
   // set form register

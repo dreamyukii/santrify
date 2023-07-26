@@ -1,4 +1,3 @@
-import "./bill.css";
 export default function bill() {
 	return (
 		<div>

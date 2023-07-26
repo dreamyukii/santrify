@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
-
 import Profil from "../../../../public/Profil.png";
-import "./profile.css";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import axios from "axios";

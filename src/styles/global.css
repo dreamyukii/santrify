@@ -166,3 +166,28 @@ label {
 .dashboard:hover{
 box-shadow: 0 0 11px rgba(33,33,33,.2);
 }
+
+/* float button */
+.btn-float{
+  margin-top: 20px;
+  position:fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 20px;
+  right: 15px;
+  background-color: var(--bs-teal);
+  color: #d1d1d1;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* Profile */
+.pp-admin{
+  border-radius: 50%;
+}
+
+.form-control:focus{
+border-color: #20c997;
+box-shadow: none;
+}
+
