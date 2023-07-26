@@ -38,8 +38,6 @@ function SantriCreate() {
   //method "storePost"
   const storePost = async (e) => {
     e.preventDefault();
-    // await getToken();
-    // Define formData
     const formData = new FormData();
 
     // Append data to "formData"
@@ -134,18 +132,15 @@ function SantriCreate() {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">Divisi</label>
+                  <label className="form-label fw-bold">Kelas</label>
                   <select
                     className="form-select"
                     onChange={(e) => setDivisi(e.target.value)}
-                    placeholder="Pilih Divisi"
+                    placeholder="Pilih Kelas"
                     defaultValue={"Pilih"}
                   >
-                    <option value={"1"}>1</option>
-                    <option value={"2"}>2</option>
-                    <option value={"3"}>3</option>
-                    <option value={"4"}>4</option>
-                    <option value={"5"}>5</option>
+                    <option value={"1"}>1A</option>
+                    <option value={"2"}>1B</option>
                     <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>
