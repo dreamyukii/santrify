@@ -1,27 +1,45 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Profil from "../../../public/Profil.png";
 import { usePathname, redirect } from "next/navigation";
+import Image from "next/image";
 import Cookies from "js-cookie";
+import axios from "axios";
+import Link from "next/link";
+
 export default function NavigasiBar() {
-  // mengambil token
-  // const token = Cookies.get("token");
-  // useEffect(() => {
-  //   if (!token) {
-  //     redirect("/login");
-  //   }
-  // });
-  // Navbar Title
+  // check for user auth
+  const token = Cookies.get("token");
+  const [user, setUser] = useState({});
+  const fetchData = async () => {
+    // using bearer for auth
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    await axios
+      .get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/user`)
+      .then((response) => {
+        setUser(response.data);
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  useEffect(() => {
+    if (!token) {
+      redirect("/login");
+    }
+  });
+
   const navbarName = {
     "/dashboard": "Dashboard",
     "/dashboard/santri": "Santri",
     "/dashboard/santri/create": "Add Santri",
     "/dashboard/santri/edit": "Edit Santri",
     "/dashboard/room": "Room",
-    "/dashboard/bill": "Bill",
-    "/dashboard/classroom":"Classroom",
-    "/dashboard/profile": "Profile"
+    "/dashboard/room/create": "Create Room",
+    "/dashboard/room/edit": "Edit Room",
+    "/dashboard/classroom": "Classroom",
+    "/dashboard/classroom/create": "Create Classroom",
+    "/dashboard/classroom/edit": "Edit Classroom",
+    "/dashboard/profile": "Profile",
   };
   const [title, setTitle] = useState("");
   const pathname = usePathname();
@@ -37,7 +55,14 @@ export default function NavigasiBar() {
             <h2 className="titleNav">{title}</h2>
           </div>
           <div className="d-flex align-items-center gap-3">
-            <Image src={Profil} alt="Profile Picture" />
+            <Link href={"/dashboard/profile"}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/users/${user.image}`}
+                alt="Profile Picture"
+                width={300}
+                height={300}
+              />
+            </Link>
           </div>
         </div>
       </div>

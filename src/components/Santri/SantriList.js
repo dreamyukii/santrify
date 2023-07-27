@@ -2,11 +2,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Cookies from "js-cookie";
+
+const token = Cookies.get("token");
 export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
   const getSantri = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
+      const response = 
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
       setSantri(response.data.data.data);
     } catch (error) {
       console.log(error.messsage);

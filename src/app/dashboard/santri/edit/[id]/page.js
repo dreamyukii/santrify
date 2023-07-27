@@ -8,7 +8,7 @@ function Page({ params }) {
 
   //state
   const [santri, setSantri] = useState({});
-  const [gambar, setGambar] = useState("");
+  const [image, setImage] = useState("");
   const [nama, setNama] = useState(santri.nama);
   const [gender, setGender] = useState(santri.gender);
   const [room, setRoom] = useState(santri.room);
@@ -41,11 +41,11 @@ function Page({ params }) {
     //check validation file
     if (!imageData.type.match("image.*")) {
       //set state "image" to null
-      setGambar("");
+      setImage("");
       return;
     }
     //assign file to state "image"
-    setGambar(imageData);
+    setImage(imageData);
   };
 
   //method "updatePost"
@@ -56,7 +56,7 @@ function Page({ params }) {
     const formData = new FormData();
 
     //append data to "formData"
-    formData.append("gambar", gambar);
+    formData.append("image", image);
     formData.append("nama", nama);
     formData.append("gender", gender);
     formData.append("status", status);
@@ -86,15 +86,6 @@ function Page({ params }) {
           <div className="card border-0 rounded shadow-sm">
             <div className="card-body">
               <form onSubmit={updatePost}>
-                <div className="form-group mb-3">
-                  <label className="form-label fw-bold">Image</label>
-                  <input
-                    type="file"
-                    className="form-control"
-                    onChange={handleFileChange}
-                  />
-                </div>
-
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">NAMA</label>
                   <input
@@ -161,7 +152,7 @@ function Page({ params }) {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">Divisi</label>
+                  <label className="form-label fw-bold">Kelas</label>
                   <select
                     className="form-select"
                     onChange={(e) => setdivisi(e.target.value)}
@@ -181,7 +172,14 @@ function Page({ params }) {
                     {validation.divisi}
                   </div>
                 )}
-
+                <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Image</label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    onChange={handleFileChange}
+                  />
+                </div>
                 <button
                   tabIndex="-1"
                   type="submit"

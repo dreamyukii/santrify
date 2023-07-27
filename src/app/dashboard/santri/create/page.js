@@ -4,7 +4,7 @@ import  { useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 function SantriCreate() {
   //state
-  const [gambar, setGambar] = useState("");
+  const [image, setImage] = useState("");
   const [nama, setNama] = useState("");
   const [gender, setGender] = useState("");
   const [room, setRoom] = useState("");
@@ -27,12 +27,12 @@ function SantriCreate() {
     //check validation file
     if (!imageData.type.match("image.*")) {
       //set state "image" to null
-      setGambar("");
+      setImage("");
       return;
     }
 
     //assign file to state "image"
-    setGambar(imageData);
+    setImage(imageData);
   };
 
   //method "storePost"
@@ -41,7 +41,7 @@ function SantriCreate() {
     const formData = new FormData();
 
     // Append data to "formData"
-    formData.append("gambar", gambar);
+    formData.append("image", image);
     formData.append("nama", nama);
     formData.append("gender", gender);
     formData.append("room", room);
@@ -139,8 +139,8 @@ function SantriCreate() {
                     placeholder="Pilih Kelas"
                     defaultValue={"Pilih"}
                   >
-                    <option value={"1"}>1A</option>
-                    <option value={"2"}>1B</option>
+                    <option value={"1"}>1</option>
+                    <option value={"2"}>2</option>
                     <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>

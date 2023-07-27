@@ -1,23 +1,63 @@
 "use client";
 import Image from "next/image";
-import Profil from "../../../../public/Profil.png";
-import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+
 export default function Profile() {
-   const token = Cookies.get('token');
-   const [user,setUser] = useState({});
-   const fetchData = async () =>{
-        // using bearer for auth
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-        await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/user`)
-        .then((response)=>{
-          setUser(response.data);
-        })
-   }
-   useEffect(()=>{
+  const navigate = useRouter();
+  const [user, setUser] = useState({});
+  const fetchData = async () => {
+    // using bearer for auth
+    await axios
+      .get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/user`)
+      .then((response) => {
+        setUser(response.data);
+      });
+  };
+  useEffect(() => {
     fetchData();
-   },[])
+  }, [])
+  const [validation, setValidation] = useState({});
+  const [image, setImage] = useState("");
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [password, setPassword] = useState(user.password);
+
+  //function "handleFileChange"
+  const handleFileChange = (e) => {
+    //define variable for get value image data
+    const imageData = e.target.files[0];
+    //check validation file
+    if (!imageData.type.match("image.*")) {
+      //set state "image" to null
+      setImage("");
+      return;
+    }
+    //assign file to state "image"
+    setImage(imageData);
+  };
+
+  // update profile
+  const updatePost = async (e) => {
+    e.preventDefault();
+
+    //define formData
+    const formData = new FormData();
+
+    //append data to "formData"
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("image", image);
+    formData.append("_method", "PUT");
+    //send data to server
+    await axios
+      .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/update/`, formData)
+      .then(() => {
+        navigate.push("/dashboard/profile");
+      });
+  };
   return (
     <>
       <div className="container">
@@ -25,16 +65,12 @@ export default function Profile() {
           <div className="col-md-4">
             <div className="d-flex justify-content-center">
               <Image
-                src={Profil}
-                width={300}
-                height={300}
+                src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/users/${user.image}`}
+                width={500}
+                height={500}
                 alt="pp-admin"
                 className="pp-admin"
               />
-            </div>
-            <div className="text-center">
-              <span>{user.name}</span> <br />
-              <span>{user.email}</span>
             </div>
           </div>
           <div class="col-md-6 px-5">
@@ -42,63 +78,69 @@ export default function Profile() {
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="text-right">Profile Settings</h4>
               </div>
-              <div class="row mt-2">
-                <div class="col-md-12">
-                  <label class="labels">Nama</label>
-                  <input type="text" class="form-control" placeholder="Nama" />
+              <form onSubmit={updatePost}>
+                <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Username</label>
+                  <input
+                    className="form-control"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder={user.name}
+                  />
                 </div>
-              </div>
-              <div class="row ">
-                <div class="col-md-12 mt-2">
-                  <label class="labels">Email Address</label>
-                  <input type="text" class="form-control" placeholder="Email" />
+                {validation.name && (
+                  <div className="alert alert-danger">
+                    {validation.name}
+                  </div>
+                )}
+                <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Email</label>
+                  <input
+                    className="form-control"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={user.email}
+                  />
                 </div>
-                {/* <div class="col-md-12 mt-2">
-										<label class="labels">
-											Phone Number
-										</label>
-										<input
-											type="text"
-											class="form-control"
-											placeholder="Phone number"
-										/>
-									</div>
-									<div class="col-md-12 mt-2">
-										<label class="labels">Address</label>
-										<input
-											type="text"
-											class="form-control"
-											placeholder="Address"
-										/>
-									</div>
-								</div>
-								<div class="row mt-3 ">
-									<div class="col-md-6">
-										<label class="labels">Postcode</label>
-										<input
-											type="text"
-											class="form-control"
-											placeholder="Postcode"
-										/>
-									</div>
-									<div class="col-md-6">
-										<label>Province</label>
-										<select
-											class="form-select"
-											aria-label="Default select example"
-										>
-											<option selected>Choose...</option>
-											<option>DIY</option>
-											<option>Godean</option>
-											<option>Amikom</option>
-										</select>
-									</div> */}
-              </div>
-              <div class="justify-content-end mt-5 text-center mx-2">
-                <button type="button" class="btn btn-outline-success">
+                {validation.email && (
+                  <div className="alert alert-danger">
+                    {validation.email}
+                  </div>
+                )}
+                <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Password</label>
+                  <input
+                    className="form-control"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Masukan Password"
+                  />
+                </div>
+                {validation.password && (
+                  <div className="alert alert-danger">
+                    {validation.password}
+                  </div>
+                )}
+
+                <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Image</label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    onChange={handleFileChange}
+                  />
+                </div>
+                <button
+                  tabIndex="-1"
+                  type="submit"
+                  className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
+                >
                   Save
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
