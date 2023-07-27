@@ -56,7 +56,7 @@ export default function NavigasiBar() {
           </div>
           <div className="d-flex align-items-center gap-3">
             <Link href={"/dashboard/profile"}>
-              <Image
+              <img
                 src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/users/${user.image}`}
                 alt="Profile Picture"
                 width={300}

@@ -64,7 +64,7 @@ export default function Profile() {
         <div className="row">
           <div className="col-md-4">
             <div className="d-flex justify-content-center">
-              <Image
+              <img
                 src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/users/${user.image}`}
                 width={500}
                 height={500}
