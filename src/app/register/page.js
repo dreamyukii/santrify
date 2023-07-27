@@ -9,9 +9,22 @@ export default function register() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [image, setImage] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [validation, setValidation] = useState([]);
+  const handleFileChange = (e) => {
+    //define variable for get value image data
+    const imageData = e.target.files[0];
+    //check validation file
+    if (!imageData.type.match("image.*")) {
+      //set state "image" to null
+      setImage("");
+      return;
+    }
+    //assign file to state "image"
+    setImage(imageData);
+  };
   // register function
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -24,6 +37,7 @@ export default function register() {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("password_confirmation", passwordConfirm);
+    formData.append("image", image);
     // fetch data to api
     await axios
       .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/register`, formData)
@@ -96,6 +110,14 @@ export default function register() {
                       <label htmlFor="floatingPassword">
                         Password Confirmation
                       </label>
+                    </div>
+                    <div className="form-group mb-3">
+                      <label className="form-label fw-bold">Image</label>
+                      <input
+                        type="file"
+                        className="form-control"
+                        onChange={handleFileChange}
+                      />
                     </div>
                     <div className="d-grid mt-4">
                       <button
