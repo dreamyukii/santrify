@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
+const config={
+    images: {
+        domains: [
+          'santrify-api.domcloud.io',
+        ],
+      },
+}
 module.exports = {
     eslint:{
          ignoreDuringBuilds: true,
@@ -23,6 +30,7 @@ module.exports = {
           },
         ],
     }
+    
 };
 
 
