@@ -73,26 +73,6 @@ export default function login() {
                       />
                       <label htmlFor="floatingPassword">Password</label>
                     </div>
-                    <div className="form-check mb-3">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="rememberPasswordCheck"
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="rememberPasswordCheck"
-                      >
-                        Remember Password
-                      </label>
-                    </div>
-                    <div className=" d-block">
-                      <a className="small text-decoration-none" href="#">
-                        Forgot password?
-                      </a>
-                    </div>
-
                     <div className="d-grid mt-4">
                         <button type="submit"className="btn btn-success text-center align-items-center ">
                           Login

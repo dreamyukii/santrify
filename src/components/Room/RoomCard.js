@@ -52,6 +52,7 @@ export default function RoomCard() {
                     <p className="card-title">
                       {post.id}.{post.nama_kamar}
                     </p>
+                    <p>{post.status}</p>
                   </div>
                   <div className="col-2">
                     <Link href={`/dashboard/room/edit/${post.id}`}>
