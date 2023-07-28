@@ -24,7 +24,7 @@ export default function InformasiDana() {
 					<div className="row">
 						<div className="col-8">
 							<p className=" text-sm">Total Tagihan Santri</p>
-							<h5 className="card-text ms-1 fw-bolder">{dana.data}</h5>
+							<h5 className="card-text ms-1 fw-bolder">Rp.{dana.data}</h5>
 						</div>
 						<div className="col-4">
 							<div className="text-center mt-3">

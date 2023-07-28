@@ -135,7 +135,7 @@ function SantriCreate() {
                   <textarea
                     className="form-control"
                     rows={1}
-                    onChange={(e) => setDivisi(e.target.value)}
+                    onChange={(e) => setKelas(e.target.value)}
                     placeholder="Masukkan ID Kelas"
                   />
                 </div>
