@@ -59,7 +59,7 @@ export default function ClassRoom() {
                     <Link href={`/dashboard/classroom/edit/${post.id}`}>
                       <button type="button" className="btn-circle">
                         <MdEdit
-                          style={{ fontSize: "40px" }}
+                          style={{ fontSize: "30px" }}
                         />
                       </button>
                     </Link>
@@ -67,7 +67,7 @@ export default function ClassRoom() {
                   <div className="col-1">
                       <button type="button" className="btn-circle" onClick={() => deleteKelas(post.id)}>
                         <MdDelete
-                          style={{ fontSize: "40px" }}
+                          style={{ fontSize: "30px" }}
                         />
                       </button>
                   </div>

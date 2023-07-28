@@ -83,9 +83,9 @@ function Page({ params }) {
 
   return (
     // <Layout>
- <div className="container">
+ <div className="container ">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-12">
           <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
             <form onSubmit={updatePost}>
@@ -109,10 +109,11 @@ function Page({ params }) {
                     className="form-select"
                     onChange={(e) => setGender(e.target.value)}
                     placeholder="Masukkan Gender"
-                    defaultValue={gender}
+                    defaultValue={"Pilih"}
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
+                    <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>
                 {validation.gender && (
@@ -125,11 +126,11 @@ function Page({ params }) {
                     className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
                     placeholder="Pilih Status"
-                    defaultValue={status}
+                    defaultValue={"Pilih"}
                   >
-                    <option value={"aktif"}>Aktif</option>
-                    <option value={"nonaktif"}>Tidak Aktif</option>
-                    <option value={"dikeluarkan"}>Dikeluarkan</option>
+                    <option value={"Aktif"}>Aktif</option>
+                    <option value={"Nonaktif"}>Tidak Aktif</option>
+                    <option value={"Dikeluarkan"}>Dikeluarkan</option>
                     <option value={"Pilih"}>Pilih</option>
                   </select>
                 </div>

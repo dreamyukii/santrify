@@ -64,7 +64,7 @@ function SantriCreate() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-5">
+        <div className="col-12">
           <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
               <form onSubmit={storePost}>

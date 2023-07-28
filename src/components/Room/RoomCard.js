@@ -58,7 +58,7 @@ export default function RoomCard() {
                     <Link href={`/dashboard/room/edit/${post.id}`}>
                       <button type="button" className="btn-circle">
                         <MdEdit
-                          style={{ fontSize: "40px" }}
+                          style={{ fontSize: "30px" }}
                         />
                       </button>
                     </Link>
@@ -66,7 +66,7 @@ export default function RoomCard() {
                   <div className="col-1">
                       <button type="button" className="btn-circle" onClick={() => deleteKamar(post.id)}>
                         <MdDelete
-                          style={{ fontSize: "40px" }}
+                          style={{ fontSize: "30px" }}
                         />
                       </button>
                   </div>
