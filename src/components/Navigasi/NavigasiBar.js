@@ -21,11 +21,11 @@ export default function NavigasiBar() {
   useEffect(() => {
     fetchData();
   }, []);
-  // useEffect(() => {
-  //   if (!token) {
-  //     redirect("/login");
-  //   }
-  // });
+  useEffect(() => {
+    if (!token) {
+      redirect("/login");
+    }
+  });
 
   const navbarName = {
     "/dashboard": "Dashboard",
