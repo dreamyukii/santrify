@@ -6,7 +6,7 @@ import axios from "axios";
 function CreateRoom({ params }) {
   //state
   const [kamar, setKamar] = useState({});
-  const [gambar, setGambar] = useState("");
+  const [image, setImage] = useState("");
   const [nama_kamar, setNamaKamar] = useState(kamar.nama_kamar);
   const [status, setStatus] = useState(kamar.status);
   const navigate = useRouter();
@@ -21,11 +21,11 @@ function CreateRoom({ params }) {
     //check validation file
     if (!imageData.type.match("image.*")) {
       //set state "image" to null
-      setGambar("");
+      setImage("");
       return;
     }
     //assign file to state "image"
-    setGambar(imageData);
+    setImage(imageData);
   };
 
   //method "updatePost"
@@ -38,7 +38,7 @@ function CreateRoom({ params }) {
     //append data to "formData"
     formData.append("nama_kamar", nama_kamar);
     formData.append("status", status);
-    formData.append("gambar", gambar);
+    formData.append("image", image);
 
     //send data to server
     await axios.post(

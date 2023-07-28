@@ -94,7 +94,7 @@ function Page({ params }) {
                     className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
                     placeholder="Status"
-                    defaultValue={"Pilih"}
+                    defaultValue={status}
                   >
                     <option value={"Kosong"}>Kosong</option>
                     <option value={"Tersedia"}>Tersedia</option>

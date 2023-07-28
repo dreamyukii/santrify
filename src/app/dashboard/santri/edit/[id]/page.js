@@ -183,6 +183,7 @@ function Page({ params }) {
                   <label className="form-label fw-bold">Gambar</label>
                   <input
                     type="file"
+                    value={image}
                     className="form-control"
                     onChange={handleFileChange}
                   />
