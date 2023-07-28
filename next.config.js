@@ -13,14 +13,4 @@ module.exports = {
       },
     ];
   },
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "santrify-api.domcloud.io",
-//         port: "8000",
-//         pathname: "/storage/**",
-//       },
-//     ],
-//   },
 };

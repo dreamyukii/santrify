@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdDelete, MdEdit } from "react-icons/md";
 export default function RoomCard() {
   const [kamar, setKamar] = useState([]);
   const getKamar = async () => {
@@ -48,23 +48,26 @@ export default function RoomCard() {
               />
               <div className="card-body text-bg-success">
                 <div className="row">
-                  <div className="col-8">
+                  <div className="col-7">
                     <p className="card-title">
                       {post.id}.{post.nama_kamar}
-                    </p>
-                    <p>
-                      {post.status}
                     </p>
                   </div>
                   <div className="col-2">
                     <Link href={`/dashboard/room/edit/${post.id}`}>
                       <button type="button" className="btn-circle">
-                        <MdKeyboardArrowRight
-                          style={{ fontSize: "5pt" }}
-                          size="sm"
+                        <MdEdit
+                          style={{ fontSize: "40px" }}
                         />
                       </button>
                     </Link>
+                  </div>
+                  <div className="col-1">
+                      <button type="button" className="btn-circle" onClick={() => deleteKamar(post.id)}>
+                        <MdDelete
+                          style={{ fontSize: "40px" }}
+                        />
+                      </button>
                   </div>
                 </div>
               </div>

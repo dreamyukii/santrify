@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowTrendDown } from "@fortawesome/free-solid-svg-icons";
+import { SiGoogleclassroom } from "react-icons/si";
 export default function JumlahKelas() {
 	const [divisi, setDivisi] = useState([]);
 	const getDivisi = async () => {
@@ -27,10 +26,7 @@ export default function JumlahKelas() {
 						</div>
 						<div className="col-4">
 							<div className="text-center mt-3" >
-								<FontAwesomeIcon
-									icon={faArrowTrendDown}
-									className="down-icon"
-								/>
+							<SiGoogleclassroom className="total-santri-icon" />
 							</div>
 						</div>
 					</div>

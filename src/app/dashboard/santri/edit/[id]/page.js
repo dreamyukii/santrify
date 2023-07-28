@@ -13,7 +13,8 @@ function Page({ params }) {
   const [gender, setGender] = useState(santri.gender);
   const [room, setRoom] = useState(santri.room);
   const [status, setStatus] = useState(santri.status);
-  const [divisi, setdivisi] = useState(santri.divisi);
+  const [kelas, setKelas] = useState(santri.kelas);
+  const [bill, setBill] = useState(santri.bill);
   const navigate = useRouter();
 
   //state validation
@@ -28,7 +29,8 @@ function Page({ params }) {
       setGender(data.data.gender);
       setRoom(data.data.room);
       setStatus(data.data.status);
-      setdivisi(data.data.divisi);
+      setKelas(data.data.kelas);
+      setBill(data.data.bill);
     } catch (error) {
       console.log(error.message);
     }
@@ -61,7 +63,8 @@ function Page({ params }) {
     formData.append("gender", gender);
     formData.append("status", status);
     formData.append("room", room);
-    formData.append("divisi", divisi);
+    formData.append("kelas", kelas);
+    formData.append("bill", bill);
     formData.append("_method", "PUT");
     // debugger;
 
@@ -80,14 +83,14 @@ function Page({ params }) {
 
   return (
     // <Layout>
-    <div className="container" style={{ marginTop: "80px" }}>
+ <div className="container">
       <div className="row">
         <div className="col-md-12">
           <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
-              <form onSubmit={updatePost}>
+            <form onSubmit={updatePost}>
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">NAMA</label>
+                  <label className="form-label fw-bold">Nama</label>
                   <input
                     className="form-control"
                     type="text"
@@ -104,13 +107,12 @@ function Page({ params }) {
                   <label className="form-label fw-bold">Jenis Kelamin</label>
                   <select
                     className="form-select"
-                    rows={2}
                     onChange={(e) => setGender(e.target.value)}
                     placeholder="Masukkan Gender"
+                    defaultValue={gender}
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
-                    <option selected>Pilih</option>
                   </select>
                 </div>
                 {validation.gender && (
@@ -118,14 +120,18 @@ function Page({ params }) {
                 )}
 
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">STATUS</label>
-                  <textarea
-                    className="form-control"
-                    rows={3}
-                    value={status}
+                  <label className="form-label fw-bold">Status</label>
+                  <select
+                    className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
-                    placeholder="Masukkan Status"
-                  />
+                    placeholder="Pilih Status"
+                    defaultValue={status}
+                  >
+                    <option value={"aktif"}>Aktif</option>
+                    <option value={"nonaktif"}>Tidak Aktif</option>
+                    <option value={"dikeluarkan"}>Dikeluarkan</option>
+                    <option value={"Pilih"}>Pilih</option>
+                  </select>
                 </div>
                 {validation.status && (
                   <div className="alert alert-danger">{validation.status}</div>
@@ -133,19 +139,13 @@ function Page({ params }) {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Kamar</label>
-                  <select
-                    className="form-select"
+                  <textarea
+                    className="form-control"
+                    rows={1}
+                    value={room}
                     onChange={(e) => setRoom(e.target.value)}
-                    placeholder="Pilih Kamar"
-                    defaultValue={"Pilih"}
-                  >
-                    <option value={"1"}>1</option>
-                    <option value={"2"}>2</option>
-                    <option value={"3"}>3</option>
-                    <option value={"4"}>4</option>
-                    <option value={"5"}>5</option>
-                    <option value={"Pilih"}>Pilih</option>
-                  </select>
+                    placeholder="Masukkan ID Kamar"
+                  />
                 </div>
                 {validation.room && (
                   <div className="alert alert-danger">{validation.room}</div>
@@ -153,27 +153,34 @@ function Page({ params }) {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Kelas</label>
-                  <select
-                    className="form-select"
-                    onChange={(e) => setdivisi(e.target.value)}
-                    placeholder="Pilih Divisi"
-                    defaultValue={"Pilih"}
-                  >
-                    <option value={"1"}>1</option>
-                    <option value={"2"}>2</option>
-                    <option value={"3"}>3</option>
-                    <option value={"4"}>4</option>
-                    <option value={"5"}>5</option>
-                    <option value={"Pilih"}>Pilih</option>
-                  </select>
+                  <textarea
+                    className="form-control"
+                    rows={1}
+                    value={kelas}
+                    onChange={(e) => setKelas(e.target.value)}
+                    placeholder="Masukkan ID Kelas"
+                  />
                 </div>
-                {validation.divisi && (
+                {validation.kelas && (
                   <div className="alert alert-danger">
-                    {validation.divisi}
+                    {validation.kelas}
                   </div>
                 )}
+                  <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Tagihan</label>
+                  <textarea
+                    className="form-control"
+                    rows={1}
+                    value={bill}
+                    onChange={(e) => setBill(e.target.value)}
+                    placeholder="Masukkan Tagihan"
+                  />
+                </div>
+                {validation.status && (
+                  <div className="alert alert-danger">{validation.status}</div>
+                )}
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">Image</label>
+                  <label className="form-label fw-bold">Gambar</label>
                   <input
                     type="file"
                     className="form-control"
@@ -181,11 +188,10 @@ function Page({ params }) {
                   />
                 </div>
                 <button
-                  tabIndex="-1"
+                  className="btn btn-primary border-0 text-white btn-success shadow-sm"
                   type="submit"
-                  className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
                 >
-                  Save
+                  Simpan
                 </button>
               </form>
             </div>

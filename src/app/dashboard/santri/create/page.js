@@ -9,7 +9,8 @@ function SantriCreate() {
   const [gender, setGender] = useState("");
   const [room, setRoom] = useState("");
   const [status, setStatus] = useState("");
-  const [divisi, setDivisi] = useState("");
+  const [kelas, setKelas] = useState("");
+  const [bill, setBill] = useState("");
 
   const router = useRouter();
 
@@ -46,7 +47,8 @@ function SantriCreate() {
     formData.append("gender", gender);
     formData.append("room", room);
     formData.append("status", status);
-    formData.append("divisi", divisi);
+    formData.append("kelas", kelas);
+    formData.append("bill", bill);
 
     // Send data to the server
     await axios.post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`, formData);
@@ -99,13 +101,17 @@ function SantriCreate() {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Status</label>
-                  <textarea
-                    className="form-control"
-                    rows={3}
-                    value={status}
+                  <select
+                    className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
-                    placeholder="Masukkan Status"
-                  />
+                    placeholder="Pilih Status"
+                    defaultValue={"Pilih"}
+                  >
+                    <option value={"Aktif"}>Aktif</option>
+                    <option value={"Monaktif"}>Tidak Aktif</option>
+                    <option value={"Dikeluarkan"}>Dikeluarkan</option>
+                    <option value={"Pilih"}>Pilih</option>
+                  </select>
                 </div>
                 {validation.status && (
                   <div className="alert alert-danger">{validation.status}</div>
@@ -113,19 +119,12 @@ function SantriCreate() {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Kamar</label>
-                  <select
-                    className="form-select"
+                  <textarea
+                    className="form-control"
+                    rows={1}
                     onChange={(e) => setRoom(e.target.value)}
-                    placeholder="Pilih Kamar"
-                    defaultValue={"Pilih"}
-                  >
-                    <option value={"1"}>1</option>
-                    <option value={"2"}>2</option>
-                    <option value={"3"}>3</option>
-                    <option value={"4"}>4</option>
-                    <option value={"5"}>5</option>
-                    <option value={"Pilih"}>Pilih</option>
-                  </select>
+                    placeholder="Masukkan ID Kamar"
+                  />
                 </div>
                 {validation.room && (
                   <div className="alert alert-danger">{validation.room}</div>
@@ -133,21 +132,30 @@ function SantriCreate() {
 
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Kelas</label>
-                  <select
-                    className="form-select"
+                  <textarea
+                    className="form-control"
+                    rows={1}
                     onChange={(e) => setDivisi(e.target.value)}
-                    placeholder="Pilih Kelas"
-                    defaultValue={"Pilih"}
-                  >
-                    <option value={"1"}>1</option>
-                    <option value={"2"}>2</option>
-                    <option value={"Pilih"}>Pilih</option>
-                  </select>
+                    placeholder="Masukkan ID Kelas"
+                  />
                 </div>
-                {validation.divisi && (
+                {validation.kelas && (
                   <div className="alert alert-danger">
-                    {validation.divisi}
+                    {validation.kelas}
                   </div>
+                )}
+                  <div className="form-group mb-3">
+                  <label className="form-label fw-bold">Tagihan</label>
+                  <textarea
+                    className="form-control"
+                    rows={1}
+                    value={bill}
+                    onChange={(e) => setBill(e.target.value)}
+                    placeholder="Masukkan Tagihan"
+                  />
+                </div>
+                {validation.status && (
+                  <div className="alert alert-danger">{validation.status}</div>
                 )}
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Gambar</label>

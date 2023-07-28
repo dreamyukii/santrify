@@ -33,7 +33,6 @@ export default function SantriList(props) {
   useEffect(() => {
     getSantri();
   }, []);
-
   return (
     <>
       <div>
@@ -61,6 +60,9 @@ export default function SantriList(props) {
               <th scope="col" className="px-6 py-2">
                 Kelas
               </th>
+              <th scope="col" className="px-6 py-2">
+                Tagihan
+              </th>
               <th scope="col" className="px-6 py-2">  
               </th>
             </tr>
@@ -81,6 +83,7 @@ export default function SantriList(props) {
                 <td>{post.status}</td>
                 <td>{post.kamar.nama_kamar}</td>
                 <td>{post.divisi.nama_divisi}</td>
+                <td>Rp.{post.bill}</td>
                 <td className="text-center">
                   {/* edit santri */}
                   <Link href={`/dashboard/santri/edit/${post.id}`}>

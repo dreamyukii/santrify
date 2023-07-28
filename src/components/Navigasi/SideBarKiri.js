@@ -5,7 +5,6 @@ import {
   faGaugeHigh,
   faUser,
   faBed,
-  faMoneyBill,
   faArrowRightFromBracket,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";

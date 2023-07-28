@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname, redirect } from "next/navigation";
-import Image from "next/image";
 import Cookies from "js-cookie";
 import axios from "axios";
 import Link from "next/link";
@@ -22,23 +21,20 @@ export default function NavigasiBar() {
   useEffect(() => {
     fetchData();
   }, []);
-  useEffect(() => {
-    if (!token) {
-      redirect("/login");
-    }
-  });
+  // useEffect(() => {
+  //   if (!token) {
+  //     redirect("/login");
+  //   }
+  // });
 
   const navbarName = {
     "/dashboard": "Dashboard",
     "/dashboard/santri": "Santri",
     "/dashboard/santri/create": "Add Santri",
-    "/dashboard/santri/edit": "Edit Santri",
     "/dashboard/room": "Room",
     "/dashboard/room/create": "Create Room",
-    "/dashboard/room/edit": "Edit Room",
     "/dashboard/classroom": "Classroom",
     "/dashboard/classroom/create": "Create Classroom",
-    "/dashboard/classroom/edit": "Edit Classroom",
     "/dashboard/profile": "Profile",
   };
   const [title, setTitle] = useState("");
