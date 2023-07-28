@@ -79,8 +79,8 @@ function CreateRoom({ params }) {
                   <select
                     className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
-                    placeholder="Status"
-                    defaultValue={"Pilih"}
+                    placeholder={status}
+                    defaultValue={status}
                   >
                     <option value={"Kosong"}>Kosong</option>
                     <option value={"Tersedia"}>Tersedia</option>

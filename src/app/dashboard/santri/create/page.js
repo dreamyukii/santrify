@@ -64,7 +64,7 @@ function SantriCreate() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-5">
           <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
               <form onSubmit={storePost}>
@@ -87,8 +87,8 @@ function SantriCreate() {
                   <select
                     className="form-select"
                     onChange={(e) => setGender(e.target.value)}
-                    placeholder="Masukkan Gender"
-                    defaultValue={"Pilih"}
+                    placeholder={gender}
+                    defaultValue={gender}
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
@@ -104,8 +104,8 @@ function SantriCreate() {
                   <select
                     className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
-                    placeholder="Pilih Status"
-                    defaultValue={"Pilih"}
+                    placeholder={status}
+                    defaultValue={status}
                   >
                     <option value={"Aktif"}>Aktif</option>
                     <option value={"Monaktif"}>Tidak Aktif</option>
