@@ -1,5 +1,5 @@
 "use client";
-import DanaKeluar from "../../components/Dashboard/DanaKeluar";
+import DanaKeluar from "../../components/Dashboard/JumlahKelas";
 import JumlahSantri from "../../components/Dashboard/JumlahSantri";
 import KamarKosong from "../../components/Dashboard/KamarKosong";
 import InformasiDana from "../../components/Dashboard/InformasiDana";

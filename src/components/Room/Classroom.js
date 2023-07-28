@@ -36,40 +36,41 @@ export default function ClassRoom() {
   return (
     <div className="container d-flex">
       <div className="row">
-
-          {divisi.map((post) => (
-        <div className="col m-2">
+        {divisi.map((post) => (
+          <div className="col m-2">
             <div
-              className="card border-none"
+              className="card border-success rounded shadow-lg"
               style={{ width: 400, height: 300 }}
             >
-              <div
-                className="card-header text-bg-success"
-                style={{ height: 120 }}
-              >
-                <h1>{post.id}.{post.nama_divisi}</h1>
-              </div>
-              <div className="card-body">
+              {" "}
+              <img
+                src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/divisi/${post.image}`}
+                className="card-img-top"
+                style={{ width: 400, height: 150 }}
+              />
+              <div className="card-body text-bg-success">
                 <div className="row">
                   <div className="col-8">
-                    <p className="card-title">{post.nama_divisi}</p>
+                    <p className="card-title">
+                      {post.id}.{post.nama_divisi}
+                    </p>
                   </div>
                   <div className="col-2">
-                  <Link href={`/dashboard/classroom/edit/${post.id}`}>
-                    <button type="button" className="btn-circle">
-                      <MdKeyboardArrowRight
-                        style={{ fontSize: "5pt" }}
-                        size="sm"
-                      />
-                    </button>
+                    <Link href={`/dashboard/classroom/edit/${post.id}`}>
+                      <button type="button" className="btn-circle">
+                        <MdKeyboardArrowRight
+                          style={{ fontSize: "5pt" }}
+                          size="sm"
+                        />
+                      </button>
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

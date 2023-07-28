@@ -2,15 +2,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Cookies from "js-cookie";
-
-const token = Cookies.get("token");
 export default function SantriList(props) {
   const [santri, setSantri] = useState([]);
   const getSantri = async () => {
     try {
       const response = 
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
       setSantri(response.data.data.data);
     } catch (error) {
@@ -45,7 +41,7 @@ export default function SantriList(props) {
           <thead className="min-w-full divide-y divide-gray-200">
             <tr>
               <th scope="col" className="px-6 py-2">
-                ID
+                Nomor
               </th>
               <th scope="col" className="px-6 py-2">
                 Nama
@@ -63,7 +59,7 @@ export default function SantriList(props) {
                 Kamar
               </th>
               <th scope="col" className="px-6 py-2">
-                Divisi
+                Kelas
               </th>
               <th scope="col" className="px-6 py-2">  
               </th>
@@ -76,7 +72,7 @@ export default function SantriList(props) {
                 <td>{post.nama}</td>
                 <td>
                   <img
-                    src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/santri/${post.gambar}`}
+                    src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/santri/${post.image}`}
                     width={100}
                     height={100}
                   />

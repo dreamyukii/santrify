@@ -6,7 +6,7 @@ import axios from "axios";
 function CreateClassroom({ params }) {
   //state
   const [divisi,setDivisi] = useState({});
-  const [gambar, setGambar] = useState("");
+  const [image, setImage] = useState("");
   const [nama_divisi, setNamaDivisi] = useState(divisi.nama_divisi);
   const navigate = useRouter();
 
@@ -20,11 +20,11 @@ function CreateClassroom({ params }) {
     //check validation file
     if (!imageData.type.match("image.*")) {
       //set state "image" to null
-      setGambar("");
+      setImage("");
       return;
     }
     //assign file to state "image"
-    setGambar(imageData);
+    setImage(imageData);
   };
 
   //method "updatePost"
@@ -36,7 +36,7 @@ function CreateClassroom({ params }) {
 
     //append data to "formData"
     formData.append("nama_divisi", nama_divisi);
-    formData.append("gambar", gambar);
+    formData.append("image", image);
 
     //send data to server
     await axios.post(
@@ -53,7 +53,7 @@ function CreateClassroom({ params }) {
     <div className="container" style={{ marginTop: "80px" }}>
       <div className="row">
         <div className="col-md-12">
-          <div className="card border-0 rounded shadow-sm">
+          <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
               <form onSubmit={storePost}>
                 <div className="form-group mb-3">

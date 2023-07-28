@@ -24,8 +24,7 @@ export default function RoomCard() {
           `${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/${res}`
         );
         getKamar();
-      } catch (error) {
-      }
+      } catch (error) {}
     }
   };
   useEffect(() => {
@@ -35,40 +34,44 @@ export default function RoomCard() {
   return (
     <div className="container d-flex">
       <div className="row">
-
-          {kamar.map((post) => (
-        <div className="col m-2">
+        {kamar.map((post) => (
+          <div className="col m-2">
             <div
-              className="card border-none"
+              className="card border-success rounded shadow-lg"
               style={{ width: 400, height: 300 }}
             >
-              <div
-                className="card-header text-bg-success"
-                style={{ height: 120 }}
-              >
-                <h1>{post.id}.{post.nama_kamar}</h1>
-              </div>
-              <div className="card-body">
+              {" "}
+              <img
+                src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/kamar/${post.image}`}
+                className="card-img-top"
+                style={{ width: 400, height: 150 }}
+              />
+              <div className="card-body text-bg-success">
                 <div className="row">
                   <div className="col-8">
-                    <p className="card-title">{post.status}</p>
+                    <p className="card-title">
+                      {post.id}.{post.nama_kamar}
+                    </p>
+                    <p>
+                      {post.status}
+                    </p>
                   </div>
                   <div className="col-2">
-                  <Link href={`/dashboard/room/edit/${post.id}`}>
-                    <button type="button" className="btn-circle">
-                      <MdKeyboardArrowRight
-                        style={{ fontSize: "5pt" }}
-                        size="sm"
-                      />
-                    </button>
+                    <Link href={`/dashboard/room/edit/${post.id}`}>
+                      <button type="button" className="btn-circle">
+                        <MdKeyboardArrowRight
+                          style={{ fontSize: "5pt" }}
+                          size="sm"
+                        />
+                      </button>
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

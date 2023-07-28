@@ -9,7 +9,7 @@ export default function page() {
       <ClassRoom />{" "}
     </div>
     <div className=" float-end">
-      <Link href="/dashboard/room/create">
+      <Link href="/dashboard/classroom/create">
         <button type="button" className="btn-float">
           <FontAwesomeIcon icon={faPlus} style={{ fontSize: 30 }} />
         </button>

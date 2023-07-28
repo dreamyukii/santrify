@@ -7,22 +7,20 @@ function Page({ params }) {
 
   //state
   const id = params.id;
-  const [kamar, setKamar] = useState({});
-  const [gambar, setGambar] = useState("");
-  const [nama_kamar, setNamaKamar] = useState(kamar.nama_kamar);
-  const [status, setStatus] = useState(kamar.status);
+  const [divisi,setDivisi] = useState({});
+  const [image, setImage] = useState("");
+  const [nama_divisi, setNamaDivisi] = useState(divisi.nama_divisi);
   const navigate = useRouter();
 
   //state validation
   const [validation, setValidation] = useState({});
 
-  const getKamarById = async (id) => {
+  const getDivisiById = async (id) => {
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/${id}`
+        `${process.env.NEXT_PUBLIC_API_BACKEND}/api/divisi/${id}`
       );
-      setNamaKamar(data.data.nama_kamar);
-      setStatus(data.data.status);
+      setNamaDivisi(data.data.nama_divisi);
     } catch (error) {
       console.log(error.message);
     }
@@ -35,11 +33,11 @@ function Page({ params }) {
     //check validation file
     if (!imageData.type.match("image.*")) {
       //set state "image" to null
-      setGambar("");
+      setImage("");
       return;
     }
     //assign file to state "image"
-    setGambar(imageData);
+    setImage(imageData);
   };
 
   //method "updatePost"
@@ -50,20 +48,19 @@ function Page({ params }) {
     const formData = new FormData();
 
     //append data to "formData"
-    formData.append("nama_kamar", nama_kamar);
-    formData.append("status", status);
-    formData.append("gambar", gambar);
+    formData.append("nama_divisi", nama_divisi);
+    formData.append("image", image);
     formData.append("_method", "PUT");
     //send data to server
     await axios
-      .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/kamar/${id}`, formData)
+      .post(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/divisi/${id}`, formData)
       .then(() => {
-        navigate.push("/dashboard/room");
+        navigate.push("/dashboard/classroom");
       });
   };
 
   useEffect(() => {
-    getKamarById(id);
+    getDivisiById(id);
   }, []);
 
   return (
@@ -71,39 +68,21 @@ function Page({ params }) {
     <div className="container" style={{ marginTop: "80px" }}>
       <div className="row">
         <div className="col-md-12">
-          <div className="card border-0 rounded shadow-sm">
+          <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
               <form onSubmit={updatePost}>
                 <div className="form-group mb-3">
-                  <label className="form-label fw-bold">Nama Kamar</label>
+                  <label className="form-label fw-bold">Nama Kelas</label>
                   <input
                     className="form-control"
                     type="text"
-                    value={nama_kamar}
+                    value={nama_divisi}
                     onChange={(e) => setNamaKamar(e.target.value)}
                     placeholder="Masukkan Nama"
                   />
                 </div>
-                {validation.nama_kamar && (
-                  <div className="alert alert-danger">{validation.nama_kamar}</div>
-                )}
-
-                <div className="form-group mb-3">
-                  <label className="form-label fw-bold">Status Kamar</label>
-                  <select
-                    className="form-select"
-                    onChange={(e) => setStatus(e.target.value)}
-                    placeholder="Status"
-                    defaultValue={"Pilih"}
-                  >
-                    <option value={"Kosong"}>Kosong</option>
-                    <option value={"Tersedia"}>Tersedia</option>
-                    <option value={"Penuh"}>Penuh</option>
-                    <option value={"Pilih"}>Pilih</option>
-                  </select>
-                </div>
-                {validation.status && (
-                  <div className="alert alert-danger">{validation.status}</div>
+                {validation.nama_divisi && (
+                  <div className="alert alert-danger">{validation.nama_divisi}</div>
                 )}
 
                 <div className="form-group mb-3">

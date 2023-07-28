@@ -83,7 +83,7 @@ function Page({ params }) {
     <div className="container" style={{ marginTop: "80px" }}>
       <div className="row">
         <div className="col-md-12">
-          <div className="card border-0 rounded shadow-sm">
+          <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
               <form onSubmit={updatePost}>
                 <div className="form-group mb-3">
