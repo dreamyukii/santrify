@@ -38,9 +38,9 @@ export default function SideBarKiri() {
           className="text-decoration-none fs-5 d-flex align-items-center gap-3 logo1"
         >
           <div>
-            <img src={"/logo.png"} className="sidebar-icon" />
+            <img src={"/logo.png"} className="sidebar-icon" width={20} height={20} />
           </div>
-          <span className="overflow-hidden ">Santrify</span>
+          <span className="overflow-hidden">Santrify</span>
         </Link>
       </div>
 
@@ -86,7 +86,7 @@ export default function SideBarKiri() {
             <div>
               <SiGoogleclassroom className="sidebar-icon" />
             </div>
-            <span className="overflow-hidden">Class</span>
+            <span className="overflow-hidden">Classroom</span>
           </Link>
         </li>
         <li>

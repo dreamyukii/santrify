@@ -63,9 +63,6 @@
   color: inherit;
 }
 
-.sidebar-icon {
-  width: 20px;
-}
 
 /* main */
 .main-content {
@@ -180,12 +177,22 @@ box-shadow: 0 0 11px rgba(33,33,33,.2);
   border-radius: 50%;
   text-align: center;
 }
-
+.btn-float-left-top{
+  margin-top: 20px;
+  position:fixed;
+  width: 70px;
+  height: 70px;
+  top: 100px;
+  left: 130px;
+  background-color: var(--bs-teal);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+}
 /* Profile */
 .pp-admin{
   border-radius: 50%;
 }
-
 .form-control:focus{
 border-color: #20c997;
 box-shadow: none;

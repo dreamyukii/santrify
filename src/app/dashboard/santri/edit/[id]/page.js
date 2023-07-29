@@ -2,7 +2,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faPlus } from "@fortawesome/free-solid-svg-icons";
 function Page({ params }) {
   const id = params.id;
 
@@ -82,13 +84,12 @@ function Page({ params }) {
   }, []);
 
   return (
-    // <Layout>
- <div className="container ">
+    <div className="container">
       <div className="row">
         <div className="col-12">
           <div className="card border-0 rounded shadow-lg">
             <div className="card-body">
-            <form onSubmit={updatePost}>
+              <form onSubmit={updatePost}>
                 <div className="form-group mb-3">
                   <label className="form-label fw-bold">Nama</label>
                   <input
@@ -163,11 +164,9 @@ function Page({ params }) {
                   />
                 </div>
                 {validation.kelas && (
-                  <div className="alert alert-danger">
-                    {validation.kelas}
-                  </div>
+                  <div className="alert alert-danger">{validation.kelas}</div>
                 )}
-                  <div className="form-group mb-3">
+                <div className="form-group mb-3">
                   <label className="form-label fw-bold">Tagihan</label>
                   <textarea
                     className="form-control"

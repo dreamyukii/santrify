@@ -9,7 +9,7 @@ export default function santri() {
         <div className="px-3">
           <SantriList />{" "}
         </div>
-        <div className=" float-end">
+        <div className="float-end">
           <Link href="/dashboard/santri/create">
             <button type="button" className="btn-float">
               <FontAwesomeIcon icon={faPlus} style={{ fontSize: 30 }} />

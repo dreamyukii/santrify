@@ -62,19 +62,19 @@ export default function Profile() {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-5 py-5">
             <div className="d-flex justify-content-center">
               <img
                 src={`${process.env.NEXT_PUBLIC_API_BACKEND}/storage/users/${user.image}`}
-                width={500}
-                height={500}
+                width={400}
+                height={400}
                 alt="pp-admin"
                 className="pp-admin"
               />
             </div>
           </div>
-          <div class="col-md-6 px-5">
-            <div class="p-3 ">
+          <div class="col-md-4 px-5">
+            <div class="py-5">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="text-right">Profile Settings</h4>
               </div>
@@ -134,7 +134,6 @@ export default function Profile() {
                   />
                 </div>
                 <button
-                  tabIndex="-1"
                   type="submit"
                   className="mx-1 px-4 py-2 text-sm text-white bg-success rounded"
                 >

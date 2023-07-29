@@ -87,8 +87,8 @@ function SantriCreate() {
                   <select
                     className="form-select"
                     onChange={(e) => setGender(e.target.value)}
-                    placeholder={gender}
-                    defaultValue={gender}
+                    placeholder="Masukkan Gender"
+                    defaultValue={"Pilih"}
                   >
                     <option value={"Laki-Laki"}>Laki-Laki</option>
                     <option value={"Perempuan"}>Perempuan</option>
@@ -104,11 +104,11 @@ function SantriCreate() {
                   <select
                     className="form-select"
                     onChange={(e) => setStatus(e.target.value)}
-                    placeholder={status}
-                    defaultValue={status}
+                    placeholder="Pilih Status"
+                    defaultValue={"Pilih"}
                   >
                     <option value={"Aktif"}>Aktif</option>
-                    <option value={"Monaktif"}>Tidak Aktif</option>
+                    <option value={"Nonaktif"}>Tidak Aktif</option>
                     <option value={"Dikeluarkan"}>Dikeluarkan</option>
                     <option value={"Pilih"}>Pilih</option>
                   </select>

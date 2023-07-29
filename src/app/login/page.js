@@ -36,9 +36,7 @@ export default function login() {
       <div className="row g-0">
         <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image bg-color">
           {/* carousel */}
-          <div id="carousel" className="carousel slide my-auto mx-auto img-fluid" data-bs-ride="carousel" data-bs-animation="{100}">
           <CarouselSantri/>
-          </div>
         </div>
         <div className="col-md-8 col-lg-6">
           <div className="login d-flex align-items-center ">
@@ -59,7 +57,7 @@ export default function login() {
                         value={email} onChange={(e) => setEmail(e.target.value)}
                       />
                       <label htmlFor="floatingInput">
-                        Email Address / Username
+                        Email Address
                       </label>
                     </div>
                     <div className="form-floating mb-3">

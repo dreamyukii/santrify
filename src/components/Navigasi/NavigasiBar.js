@@ -20,13 +20,7 @@ export default function NavigasiBar() {
   };
   useEffect(() => {
     fetchData();
-  }, []);
-  useEffect(() => {
-    if (!token) {
-      redirect("/login");
-    }
-  });
-
+  },[]);
   const navbarName = {
     "/dashboard": "Dashboard",
     "/dashboard/santri": "Santri",
@@ -41,6 +35,9 @@ export default function NavigasiBar() {
   const pathname = usePathname();
   useEffect(() => {
     setTitle(navbarName[pathname]);
+    if (!token) {
+      redirect("/login");
+    }
   });
   return (
     <>
@@ -48,7 +45,7 @@ export default function NavigasiBar() {
       <div className="main-content w-100 position-relative">
         <div className="header d-flex justify-content-between align-items-center flex-wrap">
           <div className="text-center mt-2">
-            <h2 className="titleNav">{title}</h2>
+            <h2>{title}</h2>
           </div>
           <div className="d-flex align-items-center gap-3">
             <Link href={"/dashboard/profile"}>

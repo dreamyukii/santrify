@@ -22,10 +22,7 @@ export default function SantriList(props) {
           `${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri/${res}`
         );
         getSantri();
-        // Handle the response after deleting the item
-        // console.log(response.data);
       } catch (error) {
-        // Handle any errors that occur during the request
         console.error(error);
       }
     }
