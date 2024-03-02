@@ -12,7 +12,7 @@ export default function ClassRoom() {
       );
       setDivisi(response.data.data.data);
     } catch (error) {
-      console.log(error.messsage);
+      alert("can't delete classroom!");
     }
   };
   // Delete Kelas

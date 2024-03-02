@@ -10,7 +10,7 @@ export default function SantriList(props) {
       await axios.get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/santri`);
       setSantri(response.data.data.data);
     } catch (error) {
-      console.log(error.messsage);
+      alert("can't received santri list!");
     }
   };
   // Delete santri
@@ -23,7 +23,7 @@ export default function SantriList(props) {
         );
         getSantri();
       } catch (error) {
-        console.error(error);
+        alert("can't delete santri!");
       }
     }
   };

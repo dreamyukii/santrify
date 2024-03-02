@@ -73,10 +73,10 @@ export default function Profile() {
               />
             </div>
           </div>
-          <div class="col-md-4 px-5">
-            <div class="py-5">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="text-right">Profile Settings</h4>
+          <div className="col-md-4 px-5">
+            <div className="py-5">
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <h4 className="text-right">Profile Settings</h4>
               </div>
               <form onSubmit={updatePost}>
                 <div className="form-group mb-3">

@@ -114,7 +114,6 @@ function CreateRoom({ params }) {
       </div>
     </div>
     </>
-   
   );
 }
 
